@@ -67,108 +67,114 @@ export default function StarPassbookView({
       </header>
 
       {/* Konten Utama */}
-      <main className="px-4 pt-4 flex flex-col gap-5">
-        {/* HERO SECTION: Toples Celengan Bintang 3D */}
-        <section className="bg-surface-container-lowest rounded-3xl p-4 border-2 border-surface-container shadow-md relative overflow-hidden text-center">
-          {/* Ambient Glow Bubbles */}
-          <div className="absolute -top-8 -right-8 w-28 h-28 bg-sunny-gold/15 rounded-full blur-xl pointer-events-none" />
-          <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-tertiary-fixed-dim/20 rounded-full blur-lg pointer-events-none" />
+      <main className="max-w-4xl mx-auto w-full px-4 pt-4 flex-1">
+        <div className="grid grid-cols-1 md:grid-cols-12 landscape:grid-cols-12 gap-5 items-start">
+          {/* Kolom Kiri: Toples Celengan Bintang 3D (Sticky di Landscape / Desktop) */}
+          <div className="md:col-span-5 landscape:col-span-5 md:sticky md:top-20 landscape:sticky landscape:top-20">
+            {/* HERO SECTION: Toples Celengan Bintang 3D */}
+            <section className="bg-surface-container-lowest rounded-3xl p-4 border-2 border-surface-container shadow-md relative overflow-hidden text-center">
+              {/* Ambient Glow Bubbles */}
+              <div className="absolute -top-8 -right-8 w-28 h-28 bg-sunny-gold/15 rounded-full blur-xl pointer-events-none" />
+              <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-tertiary-fixed-dim/20 rounded-full blur-lg pointer-events-none" />
 
-          <div className="flex flex-col items-center relative z-10">
-            {/* Toples Bintang 3D-Style Illustrated Container */}
-            <div className="relative w-36 h-36 bg-gradient-to-b from-surface-container-high/40 to-surface-container/70 rounded-3xl border-4 border-surface-container-high p-2 flex flex-col items-center justify-end shadow-inner mb-3">
-              {/* Tutup Toples Biru */}
-              <div className="absolute -top-3 w-24 h-5 bg-tactile-shadow-sky rounded-full border-2 border-surface-container-lowest shadow-sm flex items-center justify-center">
-                <div className="w-10 h-1 bg-surface-container-lowest/50 rounded-full" />
-              </div>
+              <div className="flex flex-col items-center relative z-10">
+                {/* Toples Bintang 3D-Style Illustrated Container */}
+                <div className="relative w-36 h-36 bg-gradient-to-b from-surface-container-high/40 to-surface-container/70 rounded-3xl border-4 border-surface-container-high p-2 flex flex-col items-center justify-end shadow-inner mb-3">
+                  {/* Tutup Toples Biru */}
+                  <div className="absolute -top-3 w-24 h-5 bg-tactile-shadow-sky rounded-full border-2 border-surface-container-lowest shadow-sm flex items-center justify-center">
+                    <div className="w-10 h-1 bg-surface-container-lowest/50 rounded-full" />
+                  </div>
 
-              {/* Bintang-bintang Berkilau di dalam Toples */}
-              <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <span 
-                  className="material-symbols-outlined text-sunny-gold text-4xl absolute top-7 left-5 drop-shadow-md animate-bounce material-symbols-fill"
-                  style={{ animationDuration: '2.4s' }}
-                >
-                  star
-                </span>
-                <span 
-                  className="material-symbols-outlined text-primary-container text-4xl absolute top-9 right-4 drop-shadow-md animate-bounce material-symbols-fill"
-                  style={{ animationDuration: '3s' }}
-                >
-                  star
-                </span>
-                <span className="material-symbols-outlined text-sunny-gold text-2xl absolute bottom-6 drop-shadow-sm material-symbols-fill">
-                  auto_awesome
-                </span>
-              </div>
+                  {/* Bintang-bintang Berkilau di dalam Toples */}
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span 
+                      className="material-symbols-outlined text-sunny-gold text-4xl absolute top-7 left-5 drop-shadow-md animate-bounce material-symbols-fill"
+                      style={{ animationDuration: '2.4s' }}
+                    >
+                      star
+                    </span>
+                    <span 
+                      className="material-symbols-outlined text-primary-container text-4xl absolute top-9 right-4 drop-shadow-md animate-bounce material-symbols-fill"
+                      style={{ animationDuration: '3s' }}
+                    >
+                      star
+                    </span>
+                    <span className="material-symbols-outlined text-sunny-gold text-2xl absolute bottom-6 drop-shadow-sm material-symbols-fill">
+                      auto_awesome
+                    </span>
+                  </div>
 
-              {/* Star Count Pill di Badan Toples */}
-              <div className="relative z-10 bg-surface-container-lowest/95 backdrop-blur-sm px-4 py-1 rounded-2xl border-2 border-sunny-gold shadow-sm flex items-center gap-1.5 mb-2">
-                <span className="material-symbols-outlined text-sunny-gold text-lg material-symbols-fill">
-                  star
-                </span>
-                <span className="font-display text-lg font-bold text-on-surface">
-                  {currentStars}
-                </span>
-              </div>
-            </div>
-
-            {/* Label Toples */}
-            <div className="mb-3">
-              <span className="inline-block bg-cream-cloud text-on-primary-container font-display text-xs font-bold px-3 py-1 rounded-full border border-sunny-gold/60">
-                Toples Celengan Bintang {childName} 🏺✨
-              </span>
-              <h2 className="font-display text-base font-bold text-on-surface mt-1">
-                Tabungan Petualang Hebat
-              </h2>
-            </div>
-
-            {/* 2 Mini Summary Cards (Total Dikumpulkan & Ditukar Hadiah) */}
-            <div className="grid grid-cols-2 gap-3 w-full">
-              {/* Card 1: Dikumpulkan */}
-              <div className="bg-surface-container-low rounded-2xl p-3 border-2 border-tertiary-fixed-dim/50 border-b-4 border-b-tactile-shadow-emerald flex flex-col items-center text-center">
-                <div className="w-9 h-9 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-1 shadow-xs">
-                  <span className="material-symbols-outlined text-xl material-symbols-fill">
-                    rocket_launch
-                  </span>
+                  {/* Star Count Pill di Badan Toples */}
+                  <div className="relative z-10 bg-surface-container-lowest/95 backdrop-blur-sm px-4 py-1 rounded-2xl border-2 border-sunny-gold shadow-sm flex items-center gap-1.5 mb-2">
+                    <span className="material-symbols-outlined text-sunny-gold text-lg material-symbols-fill">
+                      star
+                    </span>
+                    <span className="font-display text-lg font-bold text-on-surface">
+                      {currentStars}
+                    </span>
+                  </div>
                 </div>
-                <span className="text-[11px] font-bold text-on-surface-variant font-display">
-                  Total Dikumpulkan
-                </span>
-                <span className="font-display text-sm font-bold text-tertiary mt-0.5">
-                  +{totalCollected} Bintang
-                </span>
-              </div>
 
-              {/* Card 2: Ditukar Hadiah */}
-              <div className="bg-surface-container-low rounded-2xl p-3 border-2 border-soft-coral/50 border-b-4 border-b-tactile-shadow-coral flex flex-col items-center text-center">
-                <div className="w-9 h-9 rounded-xl bg-soft-coral/20 flex items-center justify-center text-tactile-shadow-coral mb-1 shadow-xs">
-                  <span className="material-symbols-outlined text-xl material-symbols-fill">
-                    featured_seasonal_and_gifts
+                {/* Label Toples */}
+                <div className="mb-3">
+                  <span className="inline-block bg-cream-cloud text-on-primary-container font-display text-xs font-bold px-3 py-1 rounded-full border border-sunny-gold/60">
+                    Toples Celengan Bintang {childName} 🏺✨
                   </span>
+                  <h2 className="font-display text-base font-bold text-on-surface mt-1">
+                    Tabungan Petualang Hebat
+                  </h2>
                 </div>
-                <span className="text-[11px] font-bold text-on-surface-variant font-display">
-                  Ditukar Hadiah
-                </span>
-                <span className="font-display text-sm font-bold text-tactile-shadow-coral mt-0.5">
-                  -{totalRedeemed} Bintang
-                </span>
-              </div>
-            </div>
 
-            {/* Banner Motivasi */}
-            <div className="mt-3.5 w-full bg-cream-cloud/90 border-2 border-sunny-gold/80 rounded-2xl p-2.5 flex items-center gap-2 text-left">
-              <span className="material-symbols-outlined text-sunny-gold text-2xl shrink-0 material-symbols-fill">
-                military_tech
-              </span>
-              <p className="text-xs text-on-primary-container font-sans leading-snug">
-                <strong className="font-display text-primary font-bold">Hebat {childName}!</strong> Kamu sudah menyelesaikan <span className="underline decoration-sunny-gold decoration-2 font-bold">14 misi petualangan</span> bulan ini! 🌟
-              </p>
-            </div>
+                {/* 2 Mini Summary Cards (Total Dikumpulkan & Ditukar Hadiah) */}
+                <div className="grid grid-cols-2 gap-3 w-full">
+                  {/* Card 1: Dikumpulkan */}
+                  <div className="bg-surface-container-low rounded-2xl p-3 border-2 border-tertiary-fixed-dim/50 border-b-4 border-b-tactile-shadow-emerald flex flex-col items-center text-center">
+                    <div className="w-9 h-9 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-1 shadow-xs">
+                      <span className="material-symbols-outlined text-xl material-symbols-fill">
+                        rocket_launch
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-bold text-on-surface-variant font-display">
+                      Total Dikumpulkan
+                    </span>
+                    <span className="font-display text-sm font-bold text-tertiary mt-0.5">
+                      +{totalCollected} Bintang
+                    </span>
+                  </div>
+
+                  {/* Card 2: Ditukar Hadiah */}
+                  <div className="bg-surface-container-low rounded-2xl p-3 border-2 border-soft-coral/50 border-b-4 border-b-tactile-shadow-coral flex flex-col items-center text-center">
+                    <div className="w-9 h-9 rounded-xl bg-soft-coral/20 flex items-center justify-center text-tactile-shadow-coral mb-1 shadow-xs">
+                      <span className="material-symbols-outlined text-xl material-symbols-fill">
+                        featured_seasonal_and_gifts
+                      </span>
+                    </div>
+                    <span className="text-[11px] font-bold text-on-surface-variant font-display">
+                      Ditukar Hadiah
+                    </span>
+                    <span className="font-display text-sm font-bold text-tactile-shadow-coral mt-0.5">
+                      -{totalRedeemed} Bintang
+                    </span>
+                  </div>
+                </div>
+
+                {/* Banner Motivasi */}
+                <div className="mt-3.5 w-full bg-cream-cloud/90 border-2 border-sunny-gold/80 rounded-2xl p-2.5 flex items-center gap-2 text-left">
+                  <span className="material-symbols-outlined text-sunny-gold text-2xl shrink-0 material-symbols-fill">
+                    military_tech
+                  </span>
+                  <p className="text-xs text-on-primary-container font-sans leading-snug">
+                    <strong className="font-display text-primary font-bold">Hebat {childName}!</strong> Kamu sudah menyelesaikan <span className="underline decoration-sunny-gold decoration-2 font-bold">14 misi petualangan</span> bulan ini! 🌟
+                  </p>
+                </div>
+              </div>
+            </section>
           </div>
-        </section>
 
-        {/* FILTER TABS (Tactile Pill Switches) */}
-        <section className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
+          {/* Kolom Kanan: Filter Tabs & Riwayat Transaksi */}
+          <div className="md:col-span-7 landscape:col-span-7 flex flex-col gap-4">
+            {/* FILTER TABS (Tactile Pill Switches) */}
+            <section className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
           <button
             onClick={() => setFilterType('all')}
             type="button"
@@ -287,6 +293,8 @@ export default function StarPassbookView({
               </section>
             );
           })}
+          </div>
+          </div>
         </div>
       </main>
     </div>

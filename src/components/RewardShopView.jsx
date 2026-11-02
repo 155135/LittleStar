@@ -30,7 +30,7 @@ export default function RewardShopView({
       <RewardBanner childName={childName} stars={stars} />
 
       {/* 2. Filter Kategori Chips */}
-      <nav aria-label="Kategori Hadiah" className="overflow-x-auto pb-1 -mx-4 px-4 flex gap-2 no-scrollbar">
+      <nav aria-label="Kategori Hadiah" className="overflow-x-auto pb-1 flex flex-wrap gap-2">
         {categories.map((cat) => (
           <button
             key={cat.id}
@@ -61,7 +61,7 @@ export default function RewardShopView({
       </div>
 
       {/* 4. Grid Kartu Hadiah */}
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 landscape:grid-cols-2 gap-4">
         {filteredRewards.map((reward) => (
           <RewardCard 
             key={reward.id} 

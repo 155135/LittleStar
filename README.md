@@ -70,3 +70,4 @@ Aplikasi Habit Tracker & Reward Interaktif Anak berbasis Gamifikasi Bintang, did
 ## 📱 Panduan Mode Orang Tua
 - **PIN Default Pengujian:** `1234`
 - Ketuk ikon gembok di pojok kanan atas Header untuk beralih ke Mode Orang Tua.
+

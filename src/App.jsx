@@ -260,20 +260,57 @@ export default function App() {
       {/* Main Content Stream */}
       <main className="flex-1 px-4 pt-3 flex flex-col gap-4">
         {activeTab === 'misi' ? (
-          <>
-            {/* Objek 1.2: Toples Bintang & Progress Banner (Hero Bento Card) */}
-            <HeroProgressCard 
-              completedCount={completedCount}
-              totalCount={totalCount}
-            />
+          <div className="grid grid-cols-1 md:grid-cols-12 landscape:grid-cols-12 gap-5 items-start">
+            {/* Kolom Kiri: Hero Progress Card (Sticky di Landscape / Desktop) */}
+            <div className="md:col-span-5 landscape:col-span-5 md:sticky md:top-20 landscape:sticky landscape:top-20 flex flex-col gap-4">
+              {/* Objek 1.2: Toples Bintang & Progress Banner (Hero Bento Card) */}
+              <HeroProgressCard 
+                completedCount={completedCount}
+                totalCount={totalCount}
+              />
 
-            {/* Objek 1.3: Daftar Kartu Quest Harian */}
-            <QuestSection 
-              childName={profile.name}
-              quests={quests}
-              onMarkDone={handleMarkDone}
-            />
-          </>
+              {/* Landscape / Desktop Quick Action: Tabungan Bintang */}
+              <div className="hidden md:flex landscape:flex bg-surface-container-lowest rounded-2xl p-4 border-2 border-surface-variant shadow-xs flex-col gap-3">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-2.5">
+                    <div className="w-10 h-10 rounded-xl bg-cream-cloud border border-sunny-gold flex items-center justify-center text-sunny-gold shadow-xs">
+                      <span className="material-symbols-outlined text-2xl material-symbols-fill">
+                        savings
+                      </span>
+                    </div>
+                    <div>
+                      <p className="font-display text-xs font-bold text-on-surface">Tabungan Bintang {profile.name}</p>
+                      <p className="text-[11px] text-on-surface-variant font-medium">Lihat catatan keluar masuk bintang</p>
+                    </div>
+                  </div>
+                  <button 
+                    onClick={handleStarClick}
+                    type="button"
+                    className="tactile-btn bg-cream-cloud border-2 border-sunny-gold text-primary font-display font-bold text-xs px-3 py-1.5 rounded-xl hover:bg-sunny-gold hover:text-on-surface transition-all active:translate-y-0.5 cursor-pointer shadow-xs"
+                  >
+                    Buka Buku ★
+                  </button>
+                </div>
+                
+                <div className="pt-2 border-t border-surface-container flex items-center justify-between text-xs">
+                  <span className="text-on-surface-variant font-medium">Total Bintang Dikumpulkan:</span>
+                  <span className="font-display font-bold text-primary flex items-center gap-1">
+                    <span>{profile.totalCollected}</span>
+                    <span className="text-sunny-gold font-black">★</span>
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* Kolom Kanan: Daftar Kartu Quest Harian */}
+            <div className="md:col-span-7 landscape:col-span-7 flex flex-col gap-3">
+              <QuestSection 
+                childName={profile.name}
+                quests={quests}
+                onMarkDone={handleMarkDone}
+              />
+            </div>
+          </div>
         ) : (
           /* Objek 2.1: Toko Hadiah Anak */
           <RewardShopView 

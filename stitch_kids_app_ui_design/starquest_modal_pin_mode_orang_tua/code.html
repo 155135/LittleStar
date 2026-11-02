@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Verifikasi PIN Orang Tua - StarQuest</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400..700;1,6..12,400..700&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-tertiary-container": "#004e34",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-secondary-container": "#00476e",
+            "secondary": "#006398",
+            "error-container": "#ffdad6",
+            "on-secondary": "#ffffff",
+            "error": "#ba1a1a",
+            "tactile-shadow-amber": "#B45309",
+            "background": "#f8f9ff",
+            "secondary-fixed": "#cce5ff",
+            "tertiary": "#006c49",
+            "secondary-container": "#5bb8fe",
+            "soft-coral": "#FB923C",
+            "secondary-fixed-dim": "#93ccff",
+            "surface-tint": "#855300",
+            "inverse-primary": "#ffb95f",
+            "on-secondary-fixed": "#001d31",
+            "primary-fixed-dim": "#ffb95f",
+            "surface-variant": "#d5e3fc",
+            "primary": "#855300",
+            "tactile-shadow-emerald": "#047857",
+            "surface-container-low": "#eff4ff",
+            "on-surface-variant": "#534434",
+            "surface-container-lowest": "#ffffff",
+            "primary-container": "#f59e0b",
+            "on-secondary-fixed-variant": "#004b73",
+            "tactile-shadow-sky": "#0369A1",
+            "outline-variant": "#d8c3ad",
+            "surface-dim": "#ccdbf3",
+            "on-primary-fixed-variant": "#653e00",
+            "tertiary-container": "#30c88f",
+            "sky-tint": "#38BDF8",
+            "tertiary-fixed-dim": "#4edea3",
+            "primary-fixed": "#ffddb8",
+            "cream-cloud": "#FEF9C3",
+            "sunny-gold": "#FBBF24",
+            "surface-container-high": "#dce9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "surface-container": "#e6eeff",
+            "on-tertiary": "#ffffff",
+            "on-surface": "#0d1c2e",
+            "on-error": "#ffffff",
+            "tertiary-fixed": "#6ffbbe",
+            "surface-container-highest": "#d5e3fc",
+            "canvas-cream": "#F8FAFC",
+            "on-background": "#0d1c2e",
+            "tactile-shadow-coral": "#C2410C",
+            "surface": "#f8f9ff",
+            "outline": "#867461",
+            "inverse-surface": "#233144",
+            "on-tertiary-fixed": "#002113",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "on-primary-container": "#613b00",
+            "on-primary-fixed": "#2a1700"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-sm": "0.75rem",
+            "margin-desktop": "3rem",
+            "space-xs": "0.375rem",
+            "space-lg": "1.75rem",
+            "margin-tablet": "2rem",
+            "space-xl": "2.5rem",
+            "gutter": "1rem",
+            "space-md": "1.25rem",
+            "margin": "1rem",
+            "gutter-tablet": "1.5rem"
+          },
+          "fontFamily": {
+            "body-lg": ["Nunito Sans"],
+            "display-hero-mobile": ["Quicksand"],
+            "display-hero": ["Quicksand"],
+            "headline-md": ["Quicksand"],
+            "body-sm": ["Nunito Sans"],
+            "headline-lg-mobile": ["Quicksand"],
+            "body-md": ["Nunito Sans"],
+            "label-lg": ["Quicksand"],
+            "headline-sm": ["Quicksand"],
+            "label-sm": ["Quicksand"],
+            "label-md": ["Quicksand"],
+            "headline-lg": ["Quicksand"],
+            "number-counter": ["Quicksand"]
+          },
+          "fontSize": {
+            "body-lg": ["18px", {"lineHeight": "26px", "fontWeight": "600"}],
+            "display-hero-mobile": ["36px", {"lineHeight": "44px", "fontWeight": "700"}],
+            "display-hero": ["48px", {"lineHeight": "56px", "fontWeight": "700"}],
+            "headline-md": ["22px", {"lineHeight": "28px", "fontWeight": "700"}],
+            "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "500"}],
+            "headline-lg-mobile": ["26px", {"lineHeight": "32px", "fontWeight": "700"}],
+            "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "600"}],
+            "label-lg": ["16px", {"lineHeight": "20px", "fontWeight": "700"}],
+            "headline-sm": ["18px", {"lineHeight": "24px", "fontWeight": "700"}],
+            "label-sm": ["12px", {"lineHeight": "16px", "fontWeight": "700"}],
+            "label-md": ["14px", {"lineHeight": "18px", "fontWeight": "700"}],
+            "headline-lg": ["32px", {"lineHeight": "40px", "fontWeight": "700"}],
+            "number-counter": ["40px", {"lineHeight": "44px", "fontWeight": "700"}]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    .tactile-key {
+      box-shadow: 0 4px 0 #CBD5E1;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-key:active {
+      transform: translateY(4px);
+      box-shadow: 0 0 0 #CBD5E1;
+    }
+    .tactile-back-btn {
+      box-shadow: 0 3px 0 #E2E8F0;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-back-btn:active {
+      transform: translateY(3px);
+      box-shadow: 0 0 0 #E2E8F0;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-canvas-cream text-on-surface antialiased font-body-md min-h-screen relative overflow-hidden flex items-center justify-center p-0 md:p-space-md">
+<!-- Faint blurred background representing the Child Adventure screen beneath -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none filter blur-md opacity-40 select-none overflow-hidden scale-105">
+<div class="w-full h-full flex flex-col p-space-md max-w-md mx-auto justify-between">
+<div class="flex justify-between items-center bg-surface-container-lowest rounded-2xl p-space-sm shadow-sm">
+<div class="flex items-center gap-2">
+<div class="w-10 h-10 rounded-full bg-primary-container flex items-center justify-center font-headline-sm font-bold text-on-primary-container">B</div>
+<div>
+<div class="font-headline-sm font-bold text-on-surface">Bima</div>
+<div class="text-xs text-on-surface-variant font-medium">Penjelajah Bintang</div>
+</div>
+</div>
+<div class="flex items-center bg-cream-cloud px-3 py-1.5 rounded-full border border-sunny-gold">
+<span class="material-symbols-outlined text-tactile-shadow-amber mr-1" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-bold text-on-primary-container">18 ⭐</span>
+</div>
+</div>
+<div class="space-y-4 my-8">
+<div class="bg-surface-container-lowest p-4 rounded-3xl border-2 border-surface-variant shadow-sm flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container flex items-center justify-center text-on-secondary">
+<span class="material-symbols-outlined text-3xl">brush</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm font-bold text-on-surface">Sikat Gigi Pagi</h4>
+<p class="text-sm text-on-surface-variant">Kamar mandi • +2 ⭐</p>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-3xl border-2 border-surface-variant shadow-sm flex items-center gap-4">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-container flex items-center justify-center text-on-tertiary">
+<span class="material-symbols-outlined text-3xl">menu_book</span>
+</div>
+<div class="flex-1">
+<h4 class="font-headline-sm font-bold text-on-surface">Membaca 1 Cerita</h4>
+<p class="text-sm text-on-surface-variant">Kamar tidur • +3 ⭐</p>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-4 rounded-2xl flex justify-around">
+<div class="text-primary font-bold">Misi Petualangan</div>
+<div class="text-on-surface-variant">Toko Hadiah</div>
+</div>
+</div>
+</div>
+<!-- Modal Backdrop Overlay (Surface Level 3 Scrim) -->
+<div class="fixed inset-0 bg-inverse-surface/60 backdrop-blur-md z-40 transition-opacity flex items-center justify-center"></div>
+<!-- Parent PIN Verification Modal Container (Mobile optimized frame) -->
+<main class="relative z-50 w-full max-w-[420px] mx-auto px-margin py-space-sm h-full max-h-[840px] flex flex-col justify-center">
+<!-- Chunky Tactile Card -->
+<div class="bg-surface-container-lowest rounded-xl border-2 border-primary-fixed shadow-2xl p-space-md relative overflow-hidden flex flex-col items-center">
+<!-- Top Decorative Glow Blob -->
+<div class="absolute -top-16 -left-16 w-36 h-36 bg-cream-cloud rounded-full filter blur-2xl opacity-70 pointer-events-none"></div>
+<div class="absolute -top-10 -right-10 w-32 h-32 bg-secondary-fixed rounded-full filter blur-2xl opacity-40 pointer-events-none"></div>
+<!-- Top Action Row (Close / Back to Child Mode) -->
+<div class="w-full flex items-center justify-between mb-space-sm relative z-10">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container-low text-secondary rounded-full border border-secondary-fixed font-label-sm text-label-sm font-bold">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+          Gerbang Keamanan
+        </span>
+<button aria-label="Batal dan kembali ke mode anak" class="tactile-back-btn inline-flex items-center gap-1 px-3 py-1.5 bg-surface-container-low hover:bg-surface-variant text-on-surface-variant rounded-full border border-outline-variant font-label-sm text-label-sm font-bold" type="button">
+<span>Kembali</span>
+<span class="material-symbols-outlined text-base">close</span>
+</button>
+</div>
+<!-- Centered Shield Graphic Badge -->
+<div class="relative mb-space-xs mt-1">
+<div class="w-16 h-16 rounded-full bg-cream-cloud border-2 border-sunny-gold flex items-center justify-center shadow-md">
+<div class="w-12 h-12 rounded-full bg-primary-container flex items-center justify-center border-b-2 border-tactile-shadow-amber">
+<span class="material-symbols-outlined text-white text-2xl" style="font-variation-settings: 'FILL' 1;">lock_person</span>
+</div>
+</div>
+<!-- Little playful star badge decoration -->
+<div class="absolute -bottom-1 -right-1 w-6 h-6 rounded-full bg-sunny-gold border-2 border-surface-container-lowest flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-white text-xs" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Heading & Explanatory Subtitle -->
+<div class="text-center px-space-xs mb-space-md">
+<h1 class="font-headline-md text-headline-md font-bold text-on-surface tracking-tight">
+          Khusus Ayah &amp; Ibu 🛡️
+        </h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 leading-snug">
+          Untuk masuk ke Ruang Kontrol &amp; menyetujui misi Bima, masukkan 4 digit PIN rahasia.
+        </p>
+</div>
+<!-- 4-Digit PIN Indicators (3 Filled, 1 Active Cursor slot) -->
+<div aria-label="Indikator PIN: 3 digit terisi, 1 digit kosong" class="flex items-center justify-center gap-space-sm mb-space-md w-full">
+<!-- Slot 1: Filled -->
+<div class="w-12 h-14 rounded-2xl bg-cream-cloud border-2 border-sunny-gold flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Slot 2: Filled -->
+<div class="w-12 h-14 rounded-2xl bg-cream-cloud border-2 border-sunny-gold flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Slot 3: Filled -->
+<div class="w-12 h-14 rounded-2xl bg-cream-cloud border-2 border-sunny-gold flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<!-- Slot 4: Empty with Active Pulsing Ring -->
+<div class="w-12 h-14 rounded-2xl bg-surface-container-low border-2 border-primary-container flex items-center justify-center ring-4 ring-primary-fixed animate-pulse">
+<div class="w-2.5 h-2.5 rounded-full bg-outline-variant"></div>
+</div>
+</div>
+<!-- Tactile Numeric Keypad (3x4 Grid) -->
+<div class="grid grid-cols-3 gap-2.5 w-full max-w-[310px] mb-space-sm">
+<!-- Row 1 -->
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          1
+        </button>
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          2
+        </button>
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          3
+        </button>
+<!-- Row 2 -->
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          4
+        </button>
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          5
+        </button>
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          6
+        </button>
+<!-- Row 3 -->
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          7
+        </button>
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          8
+        </button>
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          9
+        </button>
+<!-- Row 4 -->
+<!-- Quick Biometric Key (Bottom Left) -->
+<button aria-label="Gunakan Sidik Jari atau Biometrik" class="tactile-key h-14 rounded-2xl bg-cream-cloud border-2 border-sunny-gold/80 flex items-center justify-center text-primary active:bg-sunny-gold" title="Gunakan Biometrik" type="button">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+</button>
+<!-- Zero Key (Bottom Center) -->
+<button class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center font-headline-md text-headline-md font-bold text-on-surface active:bg-surface-variant" type="button">
+          0
+        </button>
+<!-- Backspace Key (Bottom Right) -->
+<button aria-label="Hapus angka terakhir" class="tactile-key h-14 rounded-2xl bg-surface-container-low border-2 border-surface-container-high flex items-center justify-center text-on-surface active:bg-surface-variant" type="button">
+<span class="material-symbols-outlined text-2xl">backspace</span>
+</button>
+</div>
+<!-- Quick Biometric Shortcut Pill Banner -->
+<button class="w-full max-w-[310px] mt-1 py-2 px-3 rounded-xl bg-surface-container-low hover:bg-surface-variant border border-outline-variant flex items-center justify-center gap-2 text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-secondary text-lg" style="font-variation-settings: 'FILL' 1;">fingerprint</span>
+<span class="font-label-md text-label-md font-bold text-secondary">Gunakan Sidik Jari / Face ID 👆</span>
+</button>
+<!-- Footer Assistance Link -->
+<div class="mt-space-sm text-center">
+<button class="font-label-md text-label-md font-bold text-on-surface-variant hover:text-primary transition-colors underline decoration-dotted decoration-outline" type="button">
+          Lupa PIN? Kirim ke email terdaftar
+        </button>
+</div>
+</div>
+<!-- Security Micro-reassurance beneath modal -->
+<div class="text-center mt-3 text-inverse-on-surface opacity-80 text-xs font-medium flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-sm">lock</span>
+<span>PIN melindungi transaksi bintang &amp; pengaturan misi anak</span>
+</div>
+</main>
+</body></html>

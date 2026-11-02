@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StarQuest - Buku Bintang &amp; Riwayat Transaksi</title>
+<!-- Google Fonts: Quicksand & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;700&amp;family=Quicksand:wght@600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS with plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "tertiary-fixed-dim": "#4edea3",
+            "surface-container": "#e6eeff",
+            "surface-container-high": "#dce9ff",
+            "on-tertiary-container": "#004e34",
+            "sunny-gold": "#FBBF24",
+            "primary": "#855300",
+            "tactile-shadow-emerald": "#047857",
+            "secondary-fixed-dim": "#93ccff",
+            "soft-coral": "#FB923C",
+            "surface-dim": "#ccdbf3",
+            "on-secondary-fixed-variant": "#004b73",
+            "surface-tint": "#855300",
+            "outline-variant": "#d8c3ad",
+            "surface-bright": "#f8f9ff",
+            "on-error-container": "#93000a",
+            "on-surface-variant": "#534434",
+            "tertiary-fixed": "#6ffbbe",
+            "on-error": "#ffffff",
+            "secondary-container": "#5bb8fe",
+            "on-primary-fixed": "#2a1700",
+            "on-primary-container": "#613b00",
+            "inverse-surface": "#233144",
+            "surface": "#f8f9ff",
+            "primary-fixed-dim": "#ffb95f",
+            "secondary": "#006398",
+            "error-container": "#ffdad6",
+            "on-primary": "#ffffff",
+            "tactile-shadow-coral": "#C2410C",
+            "background": "#f8f9ff",
+            "sky-tint": "#38BDF8",
+            "outline": "#867461",
+            "secondary-fixed": "#cce5ff",
+            "on-surface": "#0d1c2e",
+            "on-secondary-fixed": "#001d31",
+            "surface-container-lowest": "#ffffff",
+            "error": "#ba1a1a",
+            "on-tertiary": "#ffffff",
+            "tertiary-container": "#30c88f",
+            "inverse-primary": "#ffb95f",
+            "on-tertiary-fixed": "#002113",
+            "on-primary-fixed-variant": "#653e00",
+            "tactile-shadow-sky": "#0369A1",
+            "on-secondary": "#ffffff",
+            "primary-container": "#f59e0b",
+            "primary-fixed": "#ffddb8",
+            "tertiary": "#006c49",
+            "on-background": "#0d1c2e",
+            "surface-container-low": "#eff4ff",
+            "tactile-shadow-amber": "#B45309",
+            "canvas-cream": "#F8FAFC",
+            "surface-variant": "#d5e3fc",
+            "surface-container-highest": "#d5e3fc",
+            "inverse-on-surface": "#eaf1ff",
+            "cream-cloud": "#FEF9C3",
+            "on-tertiary-fixed-variant": "#005236",
+            "on-secondary-container": "#00476e"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-xs": "0.375rem",
+            "space-md": "1.25rem",
+            "space-xl": "2.5rem",
+            "gutter": "1rem",
+            "margin-tablet": "2rem",
+            "margin-desktop": "3rem",
+            "space-lg": "1.75rem",
+            "gutter-tablet": "1.5rem",
+            "space-sm": "0.75rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Quicksand"],
+            "headline-lg-mobile": ["Quicksand"],
+            "headline-sm": ["Quicksand"],
+            "body-md": ["Nunito Sans"],
+            "body-sm": ["Nunito Sans"],
+            "number-counter": ["Quicksand"],
+            "body-lg": ["Nunito Sans"],
+            "headline-lg": ["Quicksand"],
+            "label-md": ["Quicksand"],
+            "display-hero": ["Quicksand"],
+            "headline-md": ["Quicksand"],
+            "label-lg": ["Quicksand"],
+            "display-hero-mobile": ["Quicksand"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "number-counter": ["40px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "label-md": ["14px", { "lineHeight": "18px", "fontWeight": "700" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+            "label-lg": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      line-height: 1;
+      display: inline-block;
+    }
+    .material-symbols-outlined.fill-icon {
+      font-variation-settings: 'FILL' 1, 'wght' 700, 'GRAD' 0, 'opsz' 24;
+    }
+    
+    /* Tactile 3D Push Mechanics */
+    .tactile-btn {
+      transition: transform 0.08s ease, border-bottom-width 0.08s ease;
+    }
+    .tactile-btn:active {
+      transform: translateY(4px);
+      border-bottom-width: 0px !important;
+    }
+
+    /* Ambient Pulsing Halo */
+    @keyframes starPulse {
+      0%, 100% { transform: scale(1); filter: drop-shadow(0 0 6px rgba(245, 158, 11, 0.4)); }
+      50% { transform: scale(1.05); filter: drop-shadow(0 0 14px rgba(245, 158, 11, 0.8)); }
+    }
+    .pulse-star {
+      animation: starPulse 2.8s infinite ease-in-out;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex justify-center pb-28 selection:bg-sunny-gold selection:text-on-primary-container">
+<!-- Main Mobile App Shell Canvas -->
+<main class="w-full max-w-[480px] bg-canvas-cream min-h-screen flex flex-col relative shadow-2xl">
+<!-- Top Bar / Header Section -->
+<header class="bg-surface text-on-surface shadow-sm rounded-b-lg px-margin pt-space-md pb-space-sm sticky top-0 z-40">
+<div class="flex items-center justify-between gap-space-xs">
+<!-- Back Navigation Chunky Button -->
+<a aria-label="Kembali ke Beranda" class="tactile-btn flex items-center justify-center w-12 h-12 rounded-2xl bg-surface-container-lowest text-secondary border-2 border-surface-variant border-b-4 border-b-secondary shadow-sm active:translate-y-1" href="#home">
+<span class="material-symbols-outlined fill-icon text-[24px]">arrow_back</span>
+</a>
+<!-- Header Titles -->
+<div class="flex-1 text-center px-1">
+<h1 class="text-headline-sm font-headline-sm text-on-surface flex items-center justify-center gap-1">
+            Buku Bintang Bima <span class="text-sunny-gold">⭐</span>
+</h1>
+<p class="text-label-sm font-label-sm text-on-surface-variant truncate">
+            Catatan Petualangan &amp; Tabungan Bintang
+          </p>
+</div>
+<!-- Star Balance Badge -->
+<div class="pulse-star flex items-center gap-1 bg-cream-cloud border-2 border-sunny-gold border-b-4 border-b-tactile-shadow-amber rounded-2xl px-space-xs py-1.5 shadow-sm">
+<span class="material-symbols-outlined fill-icon text-sunny-gold text-[20px]">star</span>
+<div class="flex flex-col text-left">
+<span class="text-label-sm font-label-sm text-on-primary-container leading-none">18</span>
+<span class="text-[10px] font-bold text-outline leading-tight">Aktif</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Content Feed Container -->
+<div class="px-margin pt-space-md flex flex-col gap-space-lg">
+<!-- HERO SECTION: Toples Celengan Bintang Bima -->
+<section class="bg-surface-container-lowest rounded-lg p-space-md border-2 border-surface-container shadow-md relative overflow-hidden">
+<!-- Decorative Ambient Sparkle Blobs -->
+<div class="absolute -top-8 -right-8 w-28 h-28 bg-sunny-gold/15 rounded-full blur-xl pointer-events-none"></div>
+<div class="absolute -bottom-6 -left-6 w-24 h-24 bg-tertiary-fixed-dim/20 rounded-full blur-lg pointer-events-none"></div>
+<div class="flex flex-col items-center text-center relative z-10">
+<!-- Toples Bintang 3D-Style Illustrated Container -->
+<div class="relative w-36 h-36 bg-gradient-to-b from-surface-container-high/40 to-surface-container/70 rounded-3xl border-4 border-surface-container-high p-2 flex flex-col items-center justify-end shadow-inner mb-3">
+<!-- Jar Lid -->
+<div class="absolute -top-3 w-24 h-5 bg-tactile-shadow-sky rounded-full border-2 border-surface-container-lowest shadow-sm flex items-center justify-center">
+<div class="w-10 h-1 bg-surface-container-lowest/50 rounded-full"></div>
+</div>
+<!-- Sparkling Golden Stars inside Jar -->
+<div class="absolute inset-0 flex items-center justify-center pointer-events-none">
+<span class="material-symbols-outlined fill-icon text-sunny-gold text-[38px] absolute top-7 left-5 drop-shadow-md animate-bounce" style="animation-duration: 2.4s;">star</span>
+<span class="material-symbols-outlined fill-icon text-primary-container text-[44px] absolute top-9 right-4 drop-shadow-md animate-bounce" style="animation-duration: 3s;">star</span>
+<span class="material-symbols-outlined fill-icon text-sunny-gold text-[30px] absolute bottom-6 drop-shadow-sm">hotel_class</span>
+</div>
+<!-- Star Count Pill on Jar Face -->
+<div class="relative z-10 bg-surface-container-lowest/95 backdrop-blur-sm px-4 py-1 rounded-2xl border-2 border-sunny-gold shadow-sm flex items-center gap-1.5 mb-2">
+<span class="material-symbols-outlined fill-icon text-sunny-gold text-[22px]">star</span>
+<span class="text-headline-md font-headline-md text-on-surface">18</span>
+</div>
+</div>
+<div class="mb-4">
+<span class="inline-block bg-cream-cloud text-on-primary-container text-label-sm font-label-sm px-3 py-1 rounded-full border border-sunny-gold/60">
+              Toples Celengan Bintang Bima 🏺✨
+            </span>
+<h2 class="text-headline-sm font-headline-sm text-on-surface mt-1">
+              Tabungan Petualang Hebat
+            </h2>
+</div>
+<!-- Summary Statistics: 2 Kid-Friendly Mini Cards -->
+<div class="grid grid-cols-2 gap-space-sm w-full">
+<!-- Mini Card: Total Dikumpulkan -->
+<div class="bg-surface-container-low rounded-2xl p-space-sm border-2 border-tertiary-fixed-dim/50 border-b-4 border-b-tactile-shadow-emerald flex flex-col items-center text-center">
+<div class="w-10 h-10 rounded-xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-fixed mb-1.5 shadow-sm">
+<span class="material-symbols-outlined fill-icon text-[24px]">rocket_launch</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Total Dikumpulkan</span>
+<span class="text-headline-sm font-headline-sm text-tertiary mt-0.5">+48 Bintang</span>
+</div>
+<!-- Mini Card: Sudah Ditukar Hadiah -->
+<div class="bg-surface-container-low rounded-2xl p-space-sm border-2 border-soft-coral/50 border-b-4 border-b-tactile-shadow-coral flex flex-col items-center text-center">
+<div class="w-10 h-10 rounded-xl bg-soft-coral/20 flex items-center justify-center text-tactile-shadow-coral mb-1.5 shadow-sm">
+<span class="material-symbols-outlined fill-icon text-[24px]">featured_seasonal_and_gifts</span>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant">Ditukar Hadiah</span>
+<span class="text-headline-sm font-headline-sm text-tactile-shadow-coral mt-0.5">-30 Bintang</span>
+</div>
+</div>
+<!-- Motivational Progress Banner -->
+<div class="mt-4 w-full bg-cream-cloud/90 border-2 border-sunny-gold/80 rounded-2xl p-space-sm flex items-center gap-space-xs text-left">
+<span class="material-symbols-outlined fill-icon text-sunny-gold text-[28px] shrink-0">military_tech</span>
+<p class="text-body-sm font-body-sm text-on-primary-container">
+<strong class="font-headline-sm text-primary">Hebat Bima!</strong> Kamu sudah menyelesaikan <span class="underline decoration-sunny-gold decoration-2">14 misi petualangan</span> bulan ini! 🌟
+            </p>
+</div>
+</div>
+</section>
+<!-- FILTER TABS: Chunky Tactile Pill Switches -->
+<section class="flex items-center gap-space-xs overflow-x-auto pb-1 no-scrollbar">
+<!-- Tab 1: Semua Cerita (Active) -->
+<button class="tactile-btn shrink-0 flex items-center gap-1.5 bg-primary-container text-on-primary-container border-2 border-tactile-shadow-amber border-b-4 border-b-tactile-shadow-amber rounded-2xl px-space-md py-2.5 font-label-md text-label-md active:translate-y-1 shadow-sm">
+<span class="material-symbols-outlined fill-icon text-[18px]">auto_stories</span>
+<span>Semua Cerita ✨</span>
+</button>
+<!-- Tab 2: Bintang Masuk (+) -->
+<button class="tactile-btn shrink-0 flex items-center gap-1.5 bg-surface-container-lowest text-tertiary border-2 border-tertiary-fixed-dim border-b-4 border-b-tactile-shadow-emerald rounded-2xl px-space-md py-2.5 font-label-md text-label-md active:translate-y-1 shadow-sm">
+<span class="material-symbols-outlined fill-icon text-tertiary-container text-[18px]">star</span>
+<span>Bintang Masuk (+)</span>
+</button>
+<!-- Tab 3: Hadiah Ditukar (-) -->
+<button class="tactile-btn shrink-0 flex items-center gap-1.5 bg-surface-container-lowest text-tactile-shadow-coral border-2 border-soft-coral/50 border-b-4 border-b-tactile-shadow-coral rounded-2xl px-space-md py-2.5 font-label-md text-label-md active:translate-y-1 shadow-sm">
+<span class="material-symbols-outlined fill-icon text-soft-coral text-[18px]">redeem</span>
+<span>Hadiah Ditukar (-)</span>
+</button>
+</section>
+<!-- TIMELINE / RIWAYAT TRANSAKSI CARD LIST -->
+<div class="flex flex-col gap-space-md">
+<!-- TIME GROUP: HARI INI -->
+<section class="flex flex-col gap-space-sm">
+<!-- Group Header Label -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-sunny-gold inline-block"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Hari Ini</h3>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container-high/60 px-2 py-0.5 rounded-full">2 Catatan</span>
+</div>
+<!-- Item 1: Sikat Gigi Pagi Hari -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-sm border-2 border-surface-container shadow-sm flex items-center justify-between gap-space-xs transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-secondary-container/20 border-2 border-secondary-container flex items-center justify-center shrink-0">
+<span aria-label="toothbrush" class="text-2xl" role="img">🪥</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="text-body-lg font-headline-sm text-on-surface">Sikat Gigi Pagi Hari</h4>
+<span class="text-[11px] font-bold bg-surface-container px-2 py-0.5 rounded-full text-secondary">Misi Mandiri</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined fill-icon text-tertiary text-[14px]">check_circle</span>
+                  Disetujui Ibu jam 07:15
+                </p>
+</div>
+</div>
+<!-- Star Reward Pill -->
+<div class="shrink-0 bg-tertiary-fixed text-on-tertiary-fixed border-2 border-tertiary border-b-4 border-b-tactile-shadow-emerald px-space-xs py-1.5 rounded-2xl text-center shadow-sm">
+<span class="text-label-lg font-headline-sm text-on-tertiary-container block leading-none">+2 ⭐</span>
+</div>
+</article>
+<!-- Item 2: Tukar Es Krim Stroberi -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-sm border-2 border-surface-container shadow-sm flex items-center justify-between gap-space-xs transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-soft-coral/15 border-2 border-soft-coral/40 flex items-center justify-center shrink-0">
+<span aria-label="ice cream" class="text-2xl" role="img">🍦</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="text-body-lg font-headline-sm text-on-surface">Tukar Es Krim Stroberi</h4>
+<span class="text-[11px] font-bold bg-soft-coral/20 px-2 py-0.5 rounded-full text-tactile-shadow-coral">Penukaran Hadiah</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-outline text-[14px]">volunteer_activism</span>
+                  Klaim diserahkan Ayah jam 16:30
+                </p>
+</div>
+</div>
+<!-- Star Deduction Pill -->
+<div class="shrink-0 bg-soft-coral/20 text-tactile-shadow-coral border-2 border-soft-coral border-b-4 border-b-tactile-shadow-coral px-space-xs py-1.5 rounded-2xl text-center shadow-sm">
+<span class="text-label-lg font-headline-sm text-tactile-shadow-coral block leading-none">-10 ⭐</span>
+</div>
+</article>
+</section>
+<!-- TIME GROUP: KEMARIN -->
+<section class="flex flex-col gap-space-sm">
+<!-- Group Header Label -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-secondary-fixed-dim inline-block"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">Kemarin</h3>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container-high/60 px-2 py-0.5 rounded-full">3 Catatan</span>
+</div>
+<!-- Item 3: Bereskan Mainan ke Kotak -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-sm border-2 border-surface-container shadow-sm flex items-center justify-between gap-space-xs transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-surface-container border-2 border-secondary-container/40 flex items-center justify-center shrink-0">
+<span aria-label="toys" class="text-2xl" role="img">🧸</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="text-body-lg font-headline-sm text-on-surface">Bereskan Mainan ke Kotak</h4>
+<span class="text-[11px] font-bold bg-surface-container px-2 py-0.5 rounded-full text-secondary">Misi Mandiri</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined fill-icon text-tertiary text-[14px]">arrow_back_ios_new</span>
+                  Kamar jadi rapi &amp; bersih
+                </p>
+</div>
+</div>
+<!-- Star Reward Pill -->
+<div class="shrink-0 bg-tertiary-fixed text-on-tertiary-fixed border-2 border-tertiary border-b-4 border-b-tactile-shadow-emerald px-space-xs py-1.5 rounded-2xl text-center shadow-sm">
+<span class="text-label-lg font-headline-sm text-on-tertiary-container block leading-none">+3 ⭐</span>
+</div>
+</article>
+<!-- Item 4: Makan Sayur Brokoli -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-sm border-2 border-surface-container shadow-sm flex items-center justify-between gap-space-xs transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-tertiary-fixed/30 border-2 border-tertiary-fixed flex items-center justify-center shrink-0">
+<span aria-label="broccoli" class="text-2xl" role="img">🥦</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="text-body-lg font-headline-sm text-on-surface">Makan Sayur Brokoli</h4>
+<span class="text-[11px] font-bold bg-tertiary-fixed-dim/30 px-2 py-0.5 rounded-full text-tertiary">Misi Makan Sehat</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined fill-icon text-tertiary text-[14px]">restaurant</span>
+                  Piring habis bersih!
+                </p>
+</div>
+</div>
+<!-- Star Reward Pill -->
+<div class="shrink-0 bg-tertiary-fixed text-on-tertiary-fixed border-2 border-tertiary border-b-4 border-b-tactile-shadow-emerald px-space-xs py-1.5 rounded-2xl text-center shadow-sm">
+<span class="text-label-lg font-headline-sm text-on-tertiary-container block leading-none">+2 ⭐</span>
+</div>
+</article>
+<!-- Item 5: Main Sepeda di Taman Sore -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-sm border-2 border-surface-container shadow-sm flex items-center justify-between gap-space-xs transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-soft-coral/15 border-2 border-soft-coral/40 flex items-center justify-center shrink-0">
+<span aria-label="bicycle" class="text-2xl" role="img">🚲</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="text-body-lg font-headline-sm text-on-surface">Main Sepeda di Taman</h4>
+<span class="text-[11px] font-bold bg-soft-coral/20 px-2 py-0.5 rounded-full text-tactile-shadow-coral">Penukaran Hadiah</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-outline text-[14px]">timer</span>
+                  30 menit bareng Ayah
+                </p>
+</div>
+</div>
+<!-- Star Deduction Pill -->
+<div class="shrink-0 bg-soft-coral/20 text-tactile-shadow-coral border-2 border-soft-coral border-b-4 border-b-tactile-shadow-coral px-space-xs py-1.5 rounded-2xl text-center shadow-sm">
+<span class="text-label-lg font-headline-sm text-tactile-shadow-coral block leading-none">-15 ⭐</span>
+</div>
+</article>
+</section>
+<!-- TIME GROUP: 2 HARI LALU -->
+<section class="flex flex-col gap-space-sm">
+<!-- Group Header Label -->
+<div class="flex items-center justify-between px-1">
+<div class="flex items-center gap-1.5">
+<span class="w-3 h-3 rounded-full bg-outline-variant inline-block"></span>
+<h3 class="text-headline-sm font-headline-sm text-on-surface">2 Hari Lalu</h3>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant bg-surface-container-high/60 px-2 py-0.5 rounded-full">2 Catatan</span>
+</div>
+<!-- Item 6: Tidur Siang Tepat Waktu -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-sm border-2 border-surface-container shadow-sm flex items-center justify-between gap-space-xs transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed/50 border-2 border-secondary-fixed-dim flex items-center justify-center shrink-0">
+<span aria-label="moon" class="text-2xl" role="img">🌙</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="text-body-lg font-headline-sm text-on-surface">Tidur Siang Tepat Waktu</h4>
+<span class="text-[11px] font-bold bg-secondary-fixed px-2 py-0.5 rounded-full text-secondary">Misi Istirahat</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined fill-icon text-tertiary text-[14px]">bedtime</span>
+                  Bima bangun segar &amp; ceria
+                </p>
+</div>
+</div>
+<!-- Star Reward Pill -->
+<div class="shrink-0 bg-tertiary-fixed text-on-tertiary-fixed border-2 border-tertiary border-b-4 border-b-tactile-shadow-emerald px-space-xs py-1.5 rounded-2xl text-center shadow-sm">
+<span class="text-label-lg font-headline-sm text-on-tertiary-container block leading-none">+1 ⭐</span>
+</div>
+</article>
+<!-- Item 7: Bantu Buang Sampah -->
+<article class="bg-surface-container-lowest rounded-2xl p-space-sm border-2 border-surface-container shadow-sm flex items-center justify-between gap-space-xs transition-transform hover:scale-[1.01]">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-surface-variant/40 border-2 border-surface-variant flex items-center justify-center shrink-0">
+<span aria-label="waste basket" class="text-2xl" role="img">🗑️</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-1.5 flex-wrap">
+<h4 class="text-body-lg font-headline-sm text-on-surface">Bantu Buang Sampah</h4>
+<span class="text-[11px] font-bold bg-surface-container px-2 py-0.5 rounded-full text-secondary">Misi Kebaikan</span>
+</div>
+<p class="text-body-sm font-body-sm text-on-surface-variant mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined fill-icon text-tertiary text-[14px]">favorite</span>
+                  Anak hebat penolong!
+                </p>
+</div>
+</div>
+<!-- Star Reward Pill -->
+<div class="shrink-0 bg-tertiary-fixed text-on-tertiary-fixed border-2 border-tertiary border-b-4 border-b-tactile-shadow-emerald px-space-xs py-1.5 rounded-2xl text-center shadow-sm">
+<span class="text-label-lg font-headline-sm text-on-tertiary-container block leading-none">+2 ⭐</span>
+</div>
+</article>
+</section>
+</div>
+<!-- CELEBRATION / GAMIFICATION MILESTONE BANNER -->
+<section class="bg-gradient-to-r from-cream-cloud to-primary-fixed rounded-2xl p-space-md border-2 border-sunny-gold border-b-4 border-b-tactile-shadow-amber shadow-md flex flex-col gap-space-xs relative overflow-hidden">
+<div class="flex items-center gap-space-sm">
+<div class="w-14 h-14 rounded-2xl bg-sunny-gold flex items-center justify-center shadow-sm shrink-0 border-2 border-tactile-shadow-amber">
+<span aria-label="trophy" class="text-3xl" role="img">🏆</span>
+</div>
+<div>
+<h4 class="text-headline-sm font-headline-sm text-on-primary-container">
+              Piala Penjelajah Hebat
+            </h4>
+<p class="text-body-sm font-body-sm text-on-surface-variant">
+              Lencana Pengumpul 50 Bintang: <strong class="text-primary font-bold">Kurang 2 bintang lagi! 🚀</strong>
+</p>
+</div>
+</div>
+<!-- Chunky Progress Bar Container -->
+<div class="mt-2 w-full">
+<div class="flex justify-between items-center text-label-sm font-label-sm text-on-primary-container mb-1">
+<span>48 Bintang Terkumpul</span>
+<span class="font-bold">Target: 50 ⭐</span>
+</div>
+<div class="w-full h-5 bg-surface-container-lowest rounded-full p-1 border-2 border-sunny-gold overflow-hidden">
+<div class="h-full bg-gradient-to-r from-sunny-gold to-tactile-shadow-amber rounded-full shadow-inner transition-all duration-500" style="width: 96%;"></div>
+</div>
+</div>
+</section>
+<!-- DUAL ACTION BUTTONS (Sub-navigation) -->
+<section class="grid grid-cols-2 gap-space-sm pt-space-xs mb-4">
+<a class="tactile-btn flex items-center justify-center gap-1.5 bg-secondary text-on-secondary rounded-2xl py-3.5 px-3 font-label-lg text-label-lg border-b-4 border-tactile-shadow-sky active:translate-y-1 shadow-md text-center" href="#quests">
+<span class="material-symbols-outlined fill-icon text-[20px]">rocket_launch</span>
+<span>Kembali Petualangan</span>
+</a>
+<a class="tactile-btn flex items-center justify-center gap-1.5 bg-primary-container text-on-primary-container rounded-2xl py-3.5 px-3 font-label-lg text-label-lg border-b-4 border-tactile-shadow-amber active:translate-y-1 shadow-md text-center" href="#giftshop">
+<span class="material-symbols-outlined fill-icon text-[20px]">featured_seasonal_and_gifts</span>
+<span>Katalog Hadiah</span>
+</a>
+</section>
+</div>
+<!-- SHARED COMPONENT: BottomNavBar (Destination Shell) -->
+<!-- Executing JSON: labels ["Misi Petualangan", "Toko Hadiah"], icons ["rocket_launch", "featured_seasonal_and_gifts"] -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin pb-space-sm pt-space-xs bg-surface-container-lowest dark:bg-inverse-surface shadow-lg rounded-t-lg max-w-[480px] left-1/2 -translate-x-1/2">
+<!-- Tab 1: Misi Petualangan -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-space-md py-space-xs font-medium hover:bg-surface-container dark:hover:bg-surface-variant active:translate-y-1 transition-transform duration-100" href="#quests">
+<span class="material-symbols-outlined text-[24px]">rocket_launch</span>
+<span class="text-label-md font-label-md mt-1">Misi Petualangan</span>
+</a>
+<!-- Tab 2: Toko Hadiah -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant dark:text-surface-variant px-space-md py-space-xs font-medium hover:bg-surface-container dark:hover:bg-surface-variant active:translate-y-1 transition-transform duration-100" href="#rewards">
+<span class="material-symbols-outlined text-[24px]">featured_seasonal_and_gifts</span>
+<span class="text-label-md font-label-md mt-1">Toko Hadiah</span>
+</a>
+</nav>
+</main>
+<!-- Interactive script for filter feedback -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const tabs = document.querySelectorAll('section > button.tactile-btn');
+      tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+          tabs.forEach(t => {
+            t.classList.remove('bg-primary-container', 'text-on-primary-container', 'border-tactile-shadow-amber');
+            t.classList.add('bg-surface-container-lowest');
+          });
+          tab.classList.remove('bg-surface-container-lowest');
+          tab.classList.add('bg-primary-container', 'text-on-primary-container', 'border-tactile-shadow-amber');
+        });
+      });
+    });
+  </script>
+</body></html>

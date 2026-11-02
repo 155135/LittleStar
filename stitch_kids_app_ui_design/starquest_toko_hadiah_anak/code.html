@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StarQuest - Toko Hadiah Bima</title>
+<!-- Google Fonts: Quicksand & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,600&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#0d1c2e",
+            "tactile-shadow-coral": "#C2410C",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#d8c3ad",
+            "surface-tint": "#855300",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#30c88f",
+            "surface-bright": "#f8f9ff",
+            "primary-fixed": "#ffddb8",
+            "on-primary-fixed-variant": "#653e00",
+            "soft-coral": "#FB923C",
+            "outline": "#867461",
+            "on-secondary-fixed": "#001d31",
+            "on-surface-variant": "#534434",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary-container": "#004e34",
+            "cream-cloud": "#FEF9C3",
+            "on-surface": "#0d1c2e",
+            "on-secondary-fixed-variant": "#004b73",
+            "background": "#f8f9ff",
+            "sunny-gold": "#FBBF24",
+            "on-error-container": "#93000a",
+            "tactile-shadow-amber": "#B45309",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#eaf1ff",
+            "surface": "#f8f9ff",
+            "on-tertiary-fixed": "#002113",
+            "tertiary-fixed": "#6ffbbe",
+            "sky-tint": "#38BDF8",
+            "primary-container": "#f59e0b",
+            "secondary-container": "#5bb8fe",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#ffb95f",
+            "canvas-cream": "#F8FAFC",
+            "secondary-fixed": "#cce5ff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#00476e",
+            "surface-variant": "#d5e3fc",
+            "tactile-shadow-sky": "#0369A1",
+            "inverse-surface": "#233144",
+            "secondary-fixed-dim": "#93ccff",
+            "tactile-shadow-emerald": "#047857",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "tertiary": "#006c49",
+            "on-primary-fixed": "#2a1700",
+            "surface-container-highest": "#d5e3fc",
+            "on-primary-container": "#613b00",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-dim": "#ccdbf3",
+            "secondary": "#006398",
+            "primary": "#855300",
+            "inverse-primary": "#ffb95f",
+            "surface-container": "#e6eeff",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.25rem",
+            "gutter": "1rem",
+            "space-lg": "1.75rem",
+            "space-xs": "0.375rem",
+            "margin-desktop": "3rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.75rem",
+            "gutter-tablet": "1.5rem",
+            "margin": "1rem",
+            "margin-tablet": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Quicksand"],
+            "label-lg": ["Quicksand"],
+            "headline-md": ["Quicksand"],
+            "headline-lg": ["Quicksand"],
+            "body-md": ["Nunito Sans"],
+            "headline-sm": ["Quicksand"],
+            "body-lg": ["Nunito Sans"],
+            "label-md": ["Quicksand"],
+            "headline-lg-mobile": ["Quicksand"],
+            "display-hero": ["Quicksand"],
+            "body-sm": ["Nunito Sans"],
+            "display-hero-mobile": ["Quicksand"],
+            "number-counter": ["Quicksand"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+            "label-lg": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "18px", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "number-counter": ["40px", { "lineHeight": "44px", "fontWeight": "700" }]
+          }
+        }
+      }
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    /* Playful tactile press interaction */
+    .tactile-button {
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-button:active {
+      transform: translateY(4px) !important;
+      box-shadow: none !important;
+    }
+    /* Gentle bobbing effect for star jar */
+    @keyframes gentle-float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-4px) rotate(1.5deg); }
+    }
+    .floating-star {
+      animation: gentle-float 3.5s ease-in-out infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background text-on-surface antialiased min-h-screen flex flex-col font-body-md select-none pb-28">
+<!-- TOP APP BAR (from Shared Components JSON) -->
+<header class="sticky top-0 z-40 bg-surface shadow-sm rounded-b-lg flex justify-between items-center w-full px-margin py-space-sm border-b-0">
+<!-- Leading Child Avatar Profile -->
+<div class="flex items-center gap-space-sm">
+<div class="relative w-12 h-12 rounded-full bg-cream-cloud border-2 border-sunny-gold overflow-hidden flex items-center justify-center shadow-inner">
+<img class="w-full h-full object-cover" data-alt="A cheerful 3D Pixar-styled cartoon astronaut boy named Bima with a friendly round face, rosy cheeks, and a glossy white space helmet with golden visor accents. Bright warm lighting, pastel blue cosmic background, whimsical and kid-friendly aesthetic with rich tactile texture." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAZqRo_Bcl2LzY3oQMA9wD_ehmaYysqiSic6yS8ao2uLGQskhpnzK6T-4rkiZDmNHbjhFPwWGl6ioJgHSLW8ZalV1dxW3bFbQHDgUFaud39SOJtQmrwf-m_c2Wj7ZRKZ_iYLmXJTuhUlYbGAr6p5aszsQqNGiYdTNOsgywh9wY1tWxiDe16nJ8pkt858xO9-JS2wJbBEADT5IoO2oLFwlVdodOPFxk5O47ziKvKno"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-container border-2 border-surface-container-lowest rounded-full"></span>
+</div>
+<div>
+<div class="flex items-center gap-1">
+<h1 class="text-headline-sm font-headline-sm font-bold text-on-surface">Bima</h1>
+<span class="text-xs bg-cream-cloud text-tactile-shadow-amber px-1.5 py-0.5 rounded-full font-label-sm border border-sunny-gold">Anak Juara</span>
+</div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Penjelajah Bintang 🚀</p>
+</div>
+</div>
+<!-- Right Header Slot: Star Counter Pill & Parent Mode Lock -->
+<div class="flex items-center gap-space-xs">
+<!-- Star Counter Badge -->
+<div class="flex items-center gap-1.5 bg-cream-cloud px-3 py-1.5 rounded-full border-2 border-sunny-gold shadow-sm">
+<span aria-hidden="true" class="text-lg animate-pulse">⭐</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">18</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant hidden sm:inline">Tersedia</span>
+</div>
+<!-- Lock Icon (Parent Mode Trigger) -->
+<button class="w-11 h-11 rounded-2xl bg-surface-container hover:bg-surface-variant flex items-center justify-center text-on-surface active:translate-y-1 transition-all duration-150 border-2 border-outline-variant shadow-sm" title="Mode Orang Tua" type="button">
+<span class="material-symbols-outlined" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+</button>
+</div>
+</header>
+<!-- MAIN CANVAS -->
+<main class="flex-1 max-w-4xl mx-auto w-full px-margin pt-space-md space-y-space-md">
+<!-- TOP HIGHLIGHT BANNER: CELENGAN BINTANG BIMA -->
+<section class="relative overflow-hidden bg-gradient-to-br from-cream-cloud via-surface-container-lowest to-surface-container-low rounded-lg p-space-md sm:p-space-lg border-2 border-sunny-gold shadow-md">
+<!-- Decorative background stars -->
+<div class="absolute -top-3 -right-3 text-sunny-gold opacity-30 text-7xl select-none pointer-events-none">✨</div>
+<div class="absolute bottom-1 right-24 text-soft-coral opacity-25 text-5xl select-none pointer-events-none">⭐</div>
+<div class="flex flex-col sm:flex-row items-center gap-space-md relative z-10">
+<!-- Visual Star Jar (Toples Hadiah) -->
+<div class="relative flex-shrink-0 floating-star">
+<div class="w-28 h-32 rounded-3xl bg-surface-container-lowest/80 border-4 border-sunny-gold shadow-lg backdrop-blur-md flex flex-col items-center justify-between p-2 relative overflow-hidden">
+<!-- Jar Lid -->
+<div class="w-16 h-3 bg-tactile-shadow-amber rounded-full -mt-1 shadow-sm"></div>
+<!-- Jar Content: Glowing Stars -->
+<div class="flex-1 flex flex-col items-center justify-center">
+<span class="text-4xl filter drop-shadow-md">⭐</span>
+<div class="flex items-center gap-0.5 mt-0.5">
+<span class="text-xs">✨</span>
+<span class="text-sm">🌟</span>
+<span class="text-xs">✨</span>
+</div>
+</div>
+<!-- Star Jar Level Tag -->
+<div class="bg-primary-container text-on-primary-container px-2 py-0.5 rounded-full font-label-sm text-label-sm border border-tactile-shadow-amber">
+              Penuh! 🎉
+            </div>
+</div>
+<!-- Sparkle pin -->
+<div class="absolute -top-2 -left-2 bg-soft-coral text-white p-1 rounded-full shadow border-2 border-white flex items-center justify-center">
+<span class="material-symbols-outlined text-sm" data-icon="auto_awesome" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+</div>
+<!-- Banner Copy & Motivation -->
+<div class="flex-1 text-center sm:text-left">
+<div class="inline-flex items-center gap-1.5 bg-surface-container-high px-3 py-1 rounded-full mb-1 border border-surface-variant">
+<span class="text-xs">🍯</span>
+<span class="font-label-md text-label-md text-on-surface font-bold">Toples Hadiah Bima</span>
+</div>
+<h2 class="text-headline-md font-headline-md text-on-surface font-extrabold tracking-tight">
+            Kamu Punya <span class="text-primary font-black underline decoration-sunny-gold decoration-4">18 Bintang</span> Hebat!
+          </h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">
+            Kumpulkan bintang dari misi harian untuk tukar hadiah impianmu! 🌟 Pilih hadiah favoritmu di bawah ya.
+          </p>
+<!-- Star Meter Indicator -->
+<div class="mt-3 flex items-center gap-2 justify-center sm:justify-start">
+<div class="w-full max-w-xs h-3.5 bg-surface-variant rounded-full overflow-hidden p-0.5 shadow-inner border border-outline-variant">
+<div class="h-full bg-gradient-to-r from-sunny-gold to-soft-coral rounded-full w-full transition-all duration-500"></div>
+</div>
+<span class="font-label-sm text-label-sm text-tactile-shadow-amber font-bold whitespace-nowrap">Siap Ditukar!</span>
+</div>
+</div>
+</div>
+</section>
+<!-- CATEGORY FILTER CHIPS -->
+<nav aria-label="Kategori Hadiah" class="overflow-x-auto pb-1 -mx-margin px-margin flex gap-2.5 no-scrollbar scroll-smooth">
+<!-- Active Chip: Semua Hadiah -->
+<button class="whitespace-nowrap px-4 py-2.5 rounded-2xl bg-primary-container text-on-primary-container font-label-md text-label-md font-bold shadow-md border-b-4 border-tactile-shadow-amber active:translate-y-1 transition-all flex items-center gap-1.5" type="button">
+<span>Semua Hadiah 🎈</span>
+</button>
+<!-- Inactive Chip: Aktivitas Seru -->
+<button class="whitespace-nowrap px-4 py-2.5 rounded-2xl bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md font-bold border-2 border-surface-variant shadow-sm hover:bg-surface-container active:translate-y-1 transition-all flex items-center gap-1.5" type="button">
+<span>Aktivitas Seru 🚲</span>
+</button>
+<!-- Inactive Chip: Camilan Lezat -->
+<button class="whitespace-nowrap px-4 py-2.5 rounded-2xl bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md font-bold border-2 border-surface-variant shadow-sm hover:bg-surface-container active:translate-y-1 transition-all flex items-center gap-1.5" type="button">
+<span>Camilan Lezat 🍦</span>
+</button>
+<!-- Inactive Chip: Waktu Bermain -->
+<button class="whitespace-nowrap px-4 py-2.5 rounded-2xl bg-surface-container-lowest text-on-surface-variant font-label-md text-label-md font-bold border-2 border-surface-variant shadow-sm hover:bg-surface-container active:translate-y-1 transition-all flex items-center gap-1.5" type="button">
+<span>Waktu Bermain 🎮</span>
+</button>
+</nav>
+<!-- REWARD CATALOG GRID -->
+<section aria-label="Daftar Hadiah" class="space-y-space-sm">
+<div class="flex items-center justify-between px-1">
+<h3 class="font-headline-sm text-headline-sm text-on-surface font-extrabold flex items-center gap-2">
+<span>Katalog Hadiah Seru</span>
+<span class="text-xs bg-sunny-gold text-on-surface font-bold px-2 py-0.5 rounded-full">4 Pilihan</span>
+</h3>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Sentuh untuk menukar</span>
+</div>
+<!-- Bento-style 2-Column Responsive Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-space-md">
+<!-- ITEM 1: READY TO REDEEM (Es Krim Stroberi) -->
+<article class="bg-surface-container-lowest rounded-lg border-2 border-surface-variant p-4 flex flex-col justify-between shadow-md relative overflow-hidden group hover:border-sunny-gold transition-colors">
+<!-- Top Tag & Price -->
+<div class="flex items-start justify-between gap-2 mb-2 relative z-10">
+<span class="bg-tertiary-container/30 text-on-tertiary-container font-label-sm text-label-sm px-2.5 py-1 rounded-full border border-tertiary-container flex items-center gap-1 font-bold">
+<span>Bintang Cukup! 🎉</span>
+</span>
+<div class="bg-cream-cloud border-2 border-sunny-gold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="text-base">⭐</span>
+<span class="font-headline-sm text-headline-sm text-primary font-black">10</span>
+</div>
+</div>
+<!-- Illustrated Card Banner -->
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-surface-container-low mb-3 border border-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A delightfully delicious vibrant pink strawberry ice cream cone with colorful rainbow sprinkles, dripping gently in a sunny playroom setting. Whimsical 3D digital illustration style with soft warm studio lighting, cheerful saturated pastel background, and a bright toy-like aesthetic suitable for toddlers." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjo81TqTw32S-zhtW99ISI_-6dkCcSqY5H9OlKZAdM5CZS94pDa9d2_Nn-28Bpxo-jg8kKXlfKkcijdTSx-GoVJ8VnSqmFL3PqD79mwYiIJqR56rdSLLuh8iueOOpSRgUAbSptglg6xtiw5p0SYswiOBIKFYDHOfjwlMOBDrTS8IjxwjQJ7c_5ttYhutbDqAsVGtij9JSowl9Fs2FPrsXxREK_d4Lra-bAR2JhDl8"/>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-lg text-xs font-bold text-on-surface shadow">
+              Camilan Lezat 🍦
+            </div>
+</div>
+<!-- Content Title & Progress Info -->
+<div class="space-y-2 mb-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
+              Es Krim Rasa Stroberi 🍦
+            </h4>
+<!-- Progress Bar: 100% -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1 text-on-surface-variant">
+<span class="font-bold text-tertiary">Bintangmu: 18 / 10 ⭐</span>
+<span class="text-tertiary font-bold">100% Tercapai!</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden p-0.5 border border-surface-variant">
+<div class="h-full bg-tertiary-container rounded-full w-full"></div>
+</div>
+</div>
+</div>
+<!-- Tactile Action Button -->
+<button class="tactile-button w-full h-14 bg-sunny-gold hover:bg-primary-container text-on-surface rounded-2xl font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 border-b-4 border-tactile-shadow-amber shadow-md active:translate-y-1" type="button">
+<span>Tukar Hadiah Ini! 🎁</span>
+</button>
+</article>
+<!-- ITEM 2: READY TO REDEEM (Main Sepeda Sore) -->
+<article class="bg-surface-container-lowest rounded-lg border-2 border-surface-variant p-4 flex flex-col justify-between shadow-md relative overflow-hidden group hover:border-sunny-gold transition-colors">
+<!-- Top Tag & Price -->
+<div class="flex items-start justify-between gap-2 mb-2 relative z-10">
+<span class="bg-tertiary-container/30 text-on-tertiary-container font-label-sm text-label-sm px-2.5 py-1 rounded-full border border-tertiary-container flex items-center gap-1 font-bold">
+<span>Bintang Cukup! 🎉</span>
+</span>
+<div class="bg-cream-cloud border-2 border-sunny-gold px-3 py-1 rounded-full flex items-center gap-1 shadow-sm">
+<span class="text-base">⭐</span>
+<span class="font-headline-sm text-headline-sm text-primary font-black">15</span>
+</div>
+</div>
+<!-- Card Banner Image -->
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-surface-container-low mb-3 border border-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" data-alt="A charming bright blue and yellow kids balance bicycle parked under lush green trees in a blooming public city park bathed in golden afternoon sunlight. 3D animated claymation style with soft shadows, cheerful outdoor ambiance, colorful flowers, and inviting tactile feel." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDqQSLmnIAlQEq_aWTADSf-HJAbFE67Fs6pWAJXYx6EaXvhj7takPiW4XDsafoaPYaGhmC4Yu25jme1X7cSJWTEJXJuS23eKkzlpBd0IQayH2rO7cpwHFx93z7k4Cn2-VRZ0O829xdNPe-TvUo07OYuYM5M6990b6n7ApHQR5n5iCyy6oK0fC3HpmoTEsxUH9-o9Xky1Wka5matNxAf8wbdjmg4TCOGTPLbh3m5oNc"/>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-lg text-xs font-bold text-on-surface shadow">
+              Aktivitas Seru 🚲
+            </div>
+</div>
+<!-- Content Title & Progress Info -->
+<div class="space-y-2 mb-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
+              Main Sepeda di Taman Sore 🚲
+            </h4>
+<!-- Progress Bar: 100% -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1 text-on-surface-variant">
+<span class="font-bold text-tertiary">Bintangmu: 18 / 15 ⭐</span>
+<span class="text-tertiary font-bold">100% Tercapai!</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden p-0.5 border border-surface-variant">
+<div class="h-full bg-tertiary-container rounded-full w-full"></div>
+</div>
+</div>
+</div>
+<!-- Tactile Action Button -->
+<button class="tactile-button w-full h-14 bg-sunny-gold hover:bg-primary-container text-on-surface rounded-2xl font-headline-sm text-headline-sm font-extrabold flex items-center justify-center gap-2 border-b-4 border-tactile-shadow-amber shadow-md active:translate-y-1" type="button">
+<span>Tukar Hadiah Ini! 🎁</span>
+</button>
+</article>
+<!-- ITEM 3: LOCKED / ALMOST THERE (Lego Blocks) -->
+<article class="bg-surface-container-lowest/80 rounded-lg border-2 border-surface-variant/80 p-4 flex flex-col justify-between shadow-sm relative overflow-hidden opacity-95">
+<!-- Top Tag & Price -->
+<div class="flex items-start justify-between gap-2 mb-2 relative z-10">
+<span class="bg-soft-coral/15 text-tactile-shadow-coral font-label-sm text-label-sm px-2.5 py-1 rounded-full border border-soft-coral/40 flex items-center gap-1 font-bold">
+<span>Kurang 7 ⭐ lagi!</span>
+</span>
+<div class="bg-surface-container-high border-2 border-outline-variant px-3 py-1 rounded-full flex items-center gap-1">
+<span class="text-base">⭐</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-black">25</span>
+</div>
+</div>
+<!-- Card Banner Image with Lock Overlay -->
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-surface-container-low mb-3 border border-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover filter saturate-75" data-alt="An assortment of bright multicolored plastic building bricks and miniature spaceship blocks assembled on a wooden child play table. Soft daylight illuminating clean vibrant toy blocks, playful 3D digital art style, crisp plastic sheen, and high key cheerful nursery atmosphere." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDmnOPF-mb3Tpw6yd9Fhyji1QwqeciNQe4Tg9is0oBtfqpUzFNU8jaffNEZFBWqtehlrjHZ0vFOeE4QUCD-4rrXBdzVPYKQoExy33T6bXIBTuVgggGxTDQWFA2CxUGgqO29y5TtUqohRAnitZ3T6CTKAJ15OLFYr_sSBabDfbpgf4Pnap7fjpICUxffD9cOqgr09mY5KQlPDLCB8wGgiPlpRibc55dOUbyPS3tc3Io"/>
+<div class="absolute inset-0 bg-on-background/20 backdrop-blur-[1px] flex items-center justify-center">
+<div class="bg-surface-container-lowest/90 p-2.5 rounded-2xl shadow-lg border-2 border-white flex items-center gap-1.5 text-on-surface font-label-md">
+<span class="material-symbols-outlined text-tactile-shadow-amber" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Hampir Terbuka!</span>
+</div>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-lg text-xs font-bold text-on-surface shadow">
+              Waktu Bermain 🧱
+            </div>
+</div>
+<!-- Content Title & Progress Info -->
+<div class="space-y-2 mb-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
+              Beli Mainan Balok Lego Baru 🧱
+            </h4>
+<!-- Progress Bar: 72% -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1 text-on-surface-variant">
+<span class="font-bold">18 / 25 Bintang</span>
+<span class="font-bold text-tactile-shadow-coral">72%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden p-0.5 border border-surface-variant">
+<div class="h-full bg-soft-coral rounded-full" style="width: 72%;"></div>
+</div>
+</div>
+</div>
+<!-- Disabled Chunky Button -->
+<button class="w-full h-14 bg-surface-container text-outline rounded-2xl font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 border-2 border-outline-variant cursor-not-allowed opacity-80" disabled="" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Bintang Belum Cukup</span>
+</button>
+</article>
+<!-- ITEM 4: LOCKED (Nonton Bioskop) -->
+<article class="bg-surface-container-lowest/80 rounded-lg border-2 border-surface-variant/80 p-4 flex flex-col justify-between shadow-sm relative overflow-hidden opacity-95">
+<!-- Top Tag & Price -->
+<div class="flex items-start justify-between gap-2 mb-2 relative z-10">
+<span class="bg-surface-variant text-on-surface-variant font-label-sm text-label-sm px-2.5 py-1 rounded-full border border-outline-variant flex items-center gap-1 font-bold">
+<span>Kurang 12 ⭐</span>
+</span>
+<div class="bg-surface-container-high border-2 border-outline-variant px-3 py-1 rounded-full flex items-center gap-1">
+<span class="text-base">⭐</span>
+<span class="font-headline-sm text-headline-sm text-on-surface-variant font-black">30</span>
+</div>
+</div>
+<!-- Card Banner Image with Lock Overlay -->
+<div class="relative w-full h-44 rounded-2xl overflow-hidden bg-surface-container-low mb-3 border border-surface-variant flex items-center justify-center">
+<img class="w-full h-full object-cover filter saturate-75" data-alt="A cozy, whimsical movie theater room with fluffy red kid-sized armchairs, warm popcorn in a striped bucket, and a glowing cinema screen playing an adorable cartoon galaxy movie. Stylized 3D rendering with soft cinematic rim light and friendly magical mood." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBnR-URQruml3zADFOcRbDd3KUHqlFXGxnvz97c8eHScz4gxlp4_XbHy89TMYYWDbnWfziZgiKqHDYxO30sCc-lqNe4cKzMZPM8x6pQjF2RxvGNH76vVR_eN_hWvyavDUA-o-MEspaqBI7mMnVEQ6xJ86l1oIW19HjkpksmsawbTZQUdUaCfaIXfW8vr5O3iVVYhrBdMTqJx0t2WtPbGi3W3I0jBp22fYrLCzrlG8g"/>
+<div class="absolute inset-0 bg-on-background/20 backdrop-blur-[1px] flex items-center justify-center">
+<div class="bg-surface-container-lowest/90 p-2.5 rounded-2xl shadow-lg border-2 border-white flex items-center gap-1.5 text-on-surface font-label-md">
+<span class="material-symbols-outlined text-outline" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Masih Terkunci</span>
+</div>
+</div>
+<div class="absolute bottom-2 left-2 bg-white/90 backdrop-blur-sm px-2 py-0.5 rounded-lg text-xs font-bold text-on-surface shadow">
+              Aktivitas Seru 🎬
+            </div>
+</div>
+<!-- Content Title & Progress Info -->
+<div class="space-y-2 mb-3">
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-tight">
+              Nonton Bioskop Bareng Ayah &amp; Ibu 🎬
+            </h4>
+<!-- Progress Bar: 60% -->
+<div>
+<div class="flex justify-between items-center text-label-sm font-label-sm mb-1 text-on-surface-variant">
+<span class="font-bold">18 / 30 Bintang</span>
+<span class="font-bold text-secondary">60%</span>
+</div>
+<div class="w-full h-3 bg-surface-container rounded-full overflow-hidden p-0.5 border border-surface-variant">
+<div class="h-full bg-secondary-container rounded-full" style="width: 60%;"></div>
+</div>
+</div>
+</div>
+<!-- Disabled Chunky Button -->
+<button class="w-full h-14 bg-surface-container text-outline rounded-2xl font-headline-sm text-headline-sm font-bold flex items-center justify-center gap-2 border-2 border-outline-variant cursor-not-allowed opacity-80" disabled="" type="button">
+<span class="material-symbols-outlined text-lg" data-icon="lock" style="font-variation-settings: 'FILL' 1;">lock</span>
+<span>Bintang Belum Cukup</span>
+</button>
+</article>
+</div>
+</section>
+<!-- BOTTOM PARENT VERIFICATION NOTICE -->
+<aside class="bg-cream-cloud border-2 border-sunny-gold rounded-lg p-space-sm sm:p-space-md flex items-center gap-3 shadow-sm">
+<div class="w-12 h-12 rounded-2xl bg-sunny-gold text-on-surface flex items-center justify-center flex-shrink-0 shadow-sm border border-tactile-shadow-amber">
+<span class="material-symbols-outlined text-2xl" data-icon="family_restroom" style="font-variation-settings: 'FILL' 1;">family_restroom</span>
+</div>
+<div>
+<p class="font-headline-sm text-headline-sm text-on-surface font-bold">Catatan Kecil untuk Bima:</p>
+<p class="font-body-md text-body-md text-on-surface-variant mt-0.5">
+          Setelah ditukar, minta Ayah atau Ibu untuk verifikasi hadiah ya! 👨‍👩‍👦
+        </p>
+</div>
+</aside>
+</main>
+<!-- BOTTOM NAVIGATION BAR (from Shared Components JSON: Active on 'Toko Hadiah') -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin pb-space-sm pt-space-xs bg-surface-container-lowest shadow-lg rounded-t-lg border-t-0">
+<!-- Item 1: Misi Petualangan (Inactive) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs font-medium hover:bg-surface-container rounded-2xl active:translate-y-1 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="rocket_launch">rocket_launch</span>
+<span class="text-label-md font-label-md mt-0.5">Misi Petualangan</span>
+</a>
+<!-- Item 2: Toko Hadiah (ACTIVE - Matches Current Page) -->
+<a class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-space-md py-space-xs font-bold border-b-4 border-tactile-shadow-amber hover:bg-surface-container active:translate-y-1 transition-transform duration-100" href="#">
+<span class="material-symbols-outlined text-2xl" data-icon="featured_seasonal_and_gifts" style="font-variation-settings: 'FILL' 1;">featured_seasonal_and_gifts</span>
+<span class="text-label-md font-label-md mt-0.5">Toko Hadiah</span>
+</a>
+</nav>
+</body></html>

@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StarQuest - Tukar Hadiah Es Krim</title>
+<!-- Google Fonts: Quicksand & Nunito Sans -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;1,6..12,400&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols Outlined -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS v3 -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration verbatim -->
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "sky-tint": "#38BDF8",
+            "sunny-gold": "#FBBF24",
+            "primary": "#855300",
+            "tactile-shadow-amber": "#B45309",
+            "on-background": "#0d1c2e",
+            "error-container": "#ffdad6",
+            "surface-dim": "#ccdbf3",
+            "tactile-shadow-emerald": "#047857",
+            "canvas-cream": "#F8FAFC",
+            "surface-container-low": "#eff4ff",
+            "on-surface-variant": "#534434",
+            "secondary-fixed": "#cce5ff",
+            "surface-container": "#e6eeff",
+            "secondary-fixed-dim": "#93ccff",
+            "tertiary-fixed": "#6ffbbe",
+            "tactile-shadow-coral": "#C2410C",
+            "inverse-primary": "#ffb95f",
+            "cream-cloud": "#FEF9C3",
+            "tertiary-container": "#30c88f",
+            "on-tertiary": "#ffffff",
+            "on-secondary-fixed-variant": "#004b73",
+            "primary-container": "#f59e0b",
+            "on-secondary-fixed": "#001d31",
+            "surface-container-lowest": "#ffffff",
+            "tactile-shadow-sky": "#0369A1",
+            "primary-fixed": "#ffddb8",
+            "inverse-surface": "#233144",
+            "on-primary": "#ffffff",
+            "on-error-container": "#93000a",
+            "outline": "#867461",
+            "error": "#ba1a1a",
+            "surface-variant": "#d5e3fc",
+            "background": "#f8f9ff",
+            "soft-coral": "#FB923C",
+            "tertiary": "#006c49",
+            "secondary-container": "#5bb8fe",
+            "on-primary-fixed-variant": "#653e00",
+            "on-primary-container": "#613b00",
+            "surface-container-high": "#dce9ff",
+            "on-primary-fixed": "#2a1700",
+            "on-tertiary-container": "#004e34",
+            "on-secondary": "#ffffff",
+            "on-surface": "#0d1c2e",
+            "surface-bright": "#f8f9ff",
+            "tertiary-fixed-dim": "#4edea3",
+            "primary-fixed-dim": "#ffb95f",
+            "surface-tint": "#855300",
+            "on-error": "#ffffff",
+            "secondary": "#006398",
+            "surface": "#f8f9ff",
+            "inverse-on-surface": "#eaf1ff",
+            "on-tertiary-fixed": "#002113",
+            "on-tertiary-fixed-variant": "#005236",
+            "outline-variant": "#d8c3ad",
+            "on-secondary-container": "#00476e",
+            "surface-container-highest": "#d5e3fc"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "margin-tablet": "2rem",
+            "space-md": "1.25rem",
+            "space-sm": "0.75rem",
+            "gutter": "1rem",
+            "margin-desktop": "3rem",
+            "gutter-tablet": "1.5rem",
+            "space-lg": "1.75rem",
+            "space-xl": "2.5rem",
+            "space-xs": "0.375rem",
+            "margin": "1rem"
+          },
+          "fontFamily": {
+            "headline-sm": ["Quicksand"],
+            "label-sm": ["Quicksand"],
+            "body-sm": ["Nunito Sans"],
+            "body-lg": ["Nunito Sans"],
+            "label-md": ["Quicksand"],
+            "headline-md": ["Quicksand"],
+            "body-md": ["Nunito Sans"],
+            "headline-lg-mobile": ["Quicksand"],
+            "headline-lg": ["Quicksand"],
+            "display-hero-mobile": ["Quicksand"],
+            "display-hero": ["Quicksand"],
+            "number-counter": ["Quicksand"],
+            "label-lg": ["Quicksand"]
+          },
+          "fontSize": {
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "18px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+            "number-counter": ["40px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "label-lg": ["16px", { "lineHeight": "20px", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+    
+    /* Tactile 3D Button Bounce & Press */
+    .tactile-btn-amber {
+      box-shadow: 0 5px 0 0 #B45309;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-btn-amber:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 0 #B45309;
+    }
+
+    .tactile-btn-emerald {
+      box-shadow: 0 5px 0 0 #047857;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-btn-emerald:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 0 #047857;
+    }
+
+    .tactile-btn-secondary {
+      box-shadow: 0 4px 0 0 #d8c3ad;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-btn-secondary:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 0 #d8c3ad;
+    }
+
+    .tactile-btn-close {
+      box-shadow: 0 4px 0 0 #cbd5e1;
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-btn-close:active {
+      transform: translateY(3px);
+      box-shadow: 0 1px 0 0 #cbd5e1;
+    }
+
+    /* Ambient kid spark bounce */
+    @keyframes gentle-float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-6px) rotate(2deg); }
+    }
+    .animate-gentle-float {
+      animation: gentle-float 3s ease-in-out infinite;
+    }
+
+    @keyframes pop-sparkle {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.18); opacity: 1; }
+    }
+    .animate-sparkle {
+      animation: pop-sparkle 1.8s ease-in-out infinite;
+    }
+
+    /* Subtle tempting pulse bounce for main CTA button */
+    @keyframes tactile-pulse-bounce {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.025); }
+    }
+    .animate-tactile-bounce {
+      animation: tactile-pulse-bounce 2.2s ease-in-out infinite;
+    }
+
+    /* Ambient sparkle glow flicker */
+    @keyframes ambient-shimmer {
+      0%, 100% { opacity: 0.35; transform: scale(0.9) rotate(0deg); }
+      50% { opacity: 1; transform: scale(1.15) rotate(15deg); }
+    }
+    .ambient-sparkle-1 {
+      animation: ambient-shimmer 2.2s infinite ease-in-out;
+    }
+    .ambient-sparkle-2 {
+      animation: ambient-shimmer 2.8s infinite ease-in-out 0.8s;
+    }
+
+    /* Jump celebratory bounce for success badge */
+    @keyframes hero-joy-jump {
+      0%, 100% { transform: translateY(0) scale(1); }
+      30% { transform: translateY(-14px) scale(1.1) rotate(-3deg); }
+      60% { transform: translateY(-4px) scale(1.03) rotate(3deg); }
+    }
+    .animate-joy-jump {
+      animation: hero-joy-jump 1.2s cubic-bezier(0.34, 1.56, 0.64, 1) infinite;
+    }
+
+    /* Confetti Particle Burst Keyframes */
+    @keyframes confetti-burst {
+      0% {
+        opacity: 1;
+        transform: translate(0, 0) scale(0.6) rotate(0deg);
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+        transform: translate(var(--tx, 0px), var(--ty, -150px)) scale(1.2) rotate(var(--rot, 360deg));
+      }
+    }
+    .confetti-particle {
+      position: absolute;
+      pointer-events: none;
+      animation: confetti-burst 1.6s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      z-index: 60;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .animate-gentle-float,
+      .animate-sparkle,
+      .animate-tactile-bounce,
+      .ambient-sparkle-1,
+      .ambient-sparkle-2,
+      .animate-joy-jump,
+      .confetti-particle {
+        animation: none !important;
+        transform: none !important;
+      }
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface antialiased select-none font-body-md text-body-md overflow-x-hidden min-h-screen">
+<!-- ======================================================== -->
+<!-- UNDERLYING APP CANVAS (Toko Hadiah / Background Context) -->
+<!-- ======================================================== -->
+<div class="relative w-full max-w-md mx-auto min-h-screen bg-canvas-cream flex flex-col pb-24 shadow-2xl">
+<!-- Top Bar Component from Shared Spec -->
+<header class="bg-surface shadow-sm rounded-b-lg flex justify-between items-center w-full px-margin py-space-sm sticky top-0 z-10">
+<div class="flex items-center gap-3">
+<!-- Leading Avatar: Chubby astronaut explorer kid -->
+<div class="w-12 h-12 rounded-full border-2 border-primary-container bg-cream-cloud flex items-center justify-center overflow-hidden shadow-sm">
+<img class="w-full h-full object-cover" data-alt="A lovable chubby 3D cartoon astronaut child explorer wearing an oversized soft white helmet with friendly round rosy cheeks, cheerful bright eyes, and a sweet smile, designed in a warm storybook gamified illustration style with a golden sunbeam glow." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAFt0YASQta5qA_1DBBS8A7Lg_CSREEKyxz7tgbX7E7ntlA_-8jBKqVYlCl6JC7vWKt1wo5NEJGhe2l5GEtZuniHDrHzgLx3HgceVPMACMzNNsLswVy6XDfRs2EpAEymD_t9ejbV51yAhaKbURo1laLAJT6O5EU0qe5ZsQp4CaCIF0OyCXN2T8Bd_fGfO6N_2vSdTkFfBrEynnUT6BYAcmI4Ogic2sU6Xzpehxb6B4"/>
+</div>
+<div>
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface block">Bima</span>
+<span class="text-label-sm font-label-sm text-primary flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-sunny-gold text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+            Penjelajah Bintang Cilik
+          </span>
+</div>
+</div>
+<!-- Trailing Parent Gate Icon -->
+<button aria-label="Kunci Orang Tua" class="w-10 h-10 rounded-2xl bg-surface-container flex items-center justify-center text-on-surface-variant hover:bg-surface-variant transition-colors" title="Parent Lock Gate">
+<span class="material-symbols-outlined text-primary" data-icon="lock">lock</span>
+</button>
+</header>
+<!-- Background Reward Shop Content (Dimmed / Peeking through) -->
+<main class="px-margin pt-space-md space-y-space-md opacity-40 filter blur-[2px] pointer-events-none select-none">
+<!-- Star Balance Header Pill -->
+<div class="bg-cream-cloud border-2 border-sunny-gold rounded-2xl p-space-sm flex items-center justify-between shadow-sm">
+<div class="flex items-center gap-2">
+<span class="text-2xl">🍯</span>
+<div>
+<p class="text-label-sm font-label-sm text-on-surface-variant">Toples Bintang Bima</p>
+<p class="text-headline-md font-headline-md text-primary font-bold" id="bgStarCountLabel">18 Bintang Emas</p>
+</div>
+</div>
+<div class="bg-sunny-gold px-3 py-1.5 rounded-full text-on-primary-container font-headline-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">star</span>
+<span id="bgStarBadge">18</span>
+</div>
+</div>
+<!-- Shop Headline -->
+<div class="flex items-center justify-between pt-1">
+<h2 class="text-headline-sm font-headline-sm text-on-surface font-bold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-primary" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+          Toko Hadiah Spesial
+        </h2>
+<span class="text-label-sm font-label-sm text-primary bg-primary-fixed px-2.5 py-0.5 rounded-full font-bold">Tersedia</span>
+</div>
+<!-- Reward Cards Grid Mockup -->
+<div class="grid grid-cols-2 gap-space-sm">
+<!-- Strawberry Ice Cream (The one triggered) -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 border-2 border-primary-container shadow-md flex flex-col justify-between relative overflow-hidden">
+<span class="absolute top-2 right-2 bg-sunny-gold text-on-primary-container px-2 py-0.5 rounded-full text-label-sm font-label-sm font-bold flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span> 10
+          </span>
+<div class="h-28 rounded-xl bg-red-50 flex items-center justify-center my-1 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A delightful cartoon strawberry ice cream cone with two scoops of soft pastel pink ice cream, fresh strawberry slices, rainbow sprinkles, and a crispy waffle cone rendered with soft 3D claymation textures on warm creamy backdrop." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAiA3N3RO1Lkc4_au7BmGUKzq5vP4RQvZ19OE0JZQrLDsKBiVA58clUJ3guL0wX-iOvPnEdr-eqj2v1i3POcvvrvtD5IClcx09O1grIldwtpGRQuA3-7ozOVM2Q-hqnV_pltAdx1RM25G0F-O-Q3cHygqeW6qHM4p-olDD4HYPgGyU2LOwq07-zbNWBmuHLZmzcNM4wkKX7JMpx_cW3_OCQuFa5jA04nPJMGG95Srk"/>
+</div>
+<h3 class="text-label-md font-headline-sm font-bold text-on-surface mt-1">Es Krim Stroberi</h3>
+<button class="w-full mt-2 py-2 bg-primary-container text-on-primary-container rounded-xl font-headline-sm text-sm font-bold">
+            Tukar 🎁
+          </button>
+</div>
+<!-- Second Item: Toy Car -->
+<div class="bg-surface-container-lowest rounded-2xl p-3 border-2 border-surface-container shadow-sm flex flex-col justify-between">
+<span class="self-end bg-surface-container text-on-surface px-2 py-0.5 rounded-full text-label-sm font-label-sm font-bold flex items-center gap-0.5">
+<span class="material-symbols-outlined text-xs" style="font-variation-settings: 'FILL' 1;">star</span> 15
+          </span>
+<div class="h-28 rounded-xl bg-sky-50 flex items-center justify-center my-1 overflow-hidden">
+<img class="w-full h-full object-cover" data-alt="A cute bright blue wooden toy spaceship racer with oversized smooth rubber wheels and yellow wings, photographed on a cozy cream nursery rug with soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZRPOQGCU2E88ePtxbOgHo7qcUEPeyePLDAbXkvB9QV3RuqtkLq9cHzv5C0HQvOrpPSmzLRxqlJb2ktX4qGaU1nVybiWAfm8dmSty6T2uvgchDRK7Vs_XQ0Wz73_OXclLkwudc7VoVT2eZa3JF5G8cvpBb0HGvhla0QlfXME2QgBwu3vvsetH4YDj19AQyvtIl91PRRz25AjaUntOpC85gzSeAtmk5nZ4880mKVEU"/>
+</div>
+<h3 class="text-label-md font-headline-sm font-bold text-on-surface mt-1">Mobil Roket Cilik</h3>
+<button class="w-full mt-2 py-2 bg-surface-container text-on-surface-variant rounded-xl font-headline-sm text-sm font-bold">
+            Tukar 🎁
+          </button>
+</div>
+</div>
+</main>
+<!-- Bottom Nav according to shared spec (rendered as background reference) -->
+<nav class="fixed bottom-0 left-0 w-full z-10 flex justify-around items-center px-margin pb-space-sm pt-space-xs bg-surface-container-lowest shadow-lg rounded-t-lg pointer-events-none opacity-50">
+<div class="flex flex-col items-center justify-center text-on-surface-variant px-space-md py-space-xs font-medium">
+<span class="material-symbols-outlined text-2xl" data-icon="rocket_launch">rocket_launch</span>
+<span class="text-label-md font-label-md">Misi Petualangan</span>
+</div>
+<div class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-space-md py-space-xs font-bold border-b-4 border-tactile-shadow-amber">
+<span class="material-symbols-outlined text-2xl" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+<span class="text-label-md font-label-md">Toko Hadiah</span>
+</div>
+</nav>
+<!-- Container for Dynamic Celebration Particles -->
+<div aria-hidden="true" class="fixed inset-0 pointer-events-none z-[70] overflow-hidden" id="confettiContainer"></div>
+<!-- ======================================================== -->
+<!-- MODAL BACKDROP OVERLAY & CELEBRATORY TACTILE POPUP CARD -->
+<!-- ======================================================== -->
+<div class="fixed inset-0 z-50 flex items-end sm:items-center justify-center p-3 sm:p-5 bg-inverse-surface/65 backdrop-blur-md transition-opacity duration-300" id="rewardModalOverlay">
+<!-- Interactive Container (Max mobile width, chunky tactile card) -->
+<div aria-labelledby="modalHeading" aria-modal="true" class="w-full max-w-sm sm:max-w-md bg-surface-container-lowest rounded-3xl border-4 border-cream-cloud shadow-2xl relative overflow-hidden flex flex-col transition-all duration-300" role="dialog" style="box-shadow: 0 20px 45px -10px rgba(133, 83, 0, 0.3), 0 0 0 1px rgba(251, 191, 36, 0.4);">
+<!-- Decorative Rainbow Confetti / Top Cloud Trim -->
+<div class="h-3 w-full bg-gradient-to-r from-sunny-gold via-soft-coral to-sky-tint"></div>
+<!-- Close / "Nanti Dulu" Chunky Round Button (Top-Right) -->
+<button aria-label="Tutup dan Pikir-pikir dulu" class="tactile-btn-close absolute top-4 right-4 z-20 w-11 h-11 rounded-2xl bg-surface-container-high border-2 border-slate-200 text-on-surface flex items-center justify-center cursor-pointer" onclick="closeRewardModal()" title="Tutup Modal">
+<span class="material-symbols-outlined text-xl font-bold">close</span>
+</button>
+<!-- Scrollable Modal Body (touch safe, oversized padding) -->
+<div class="px-space-md pt-4 pb-space-md sm:px-space-lg flex flex-col items-center text-center">
+<!-- 1. Celebratory Sparkle Badge & Ice Cream Hero Avatar -->
+<div class="relative mt-1 mb-3 flex items-center justify-center animate-gentle-float" id="heroBadgeWrapper">
+<!-- Glowing halo ring -->
+<div class="absolute w-36 h-36 rounded-full bg-gradient-to-br from-sunny-gold/30 via-soft-coral/20 to-sky-tint/30 blur-xl transition-all duration-500" id="heroHaloRing"></div>
+<!-- Ambient Twinkling Floating Sparkle Stars -->
+<div class="absolute -top-3 -left-4 ambient-sparkle-1 text-sunny-gold pointer-events-none">
+<span class="material-symbols-outlined text-3xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="absolute -top-1 -right-4 ambient-sparkle-2 text-sunny-gold pointer-events-none">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+<div class="absolute bottom-2 -left-4 ambient-sparkle-2 text-soft-coral pointer-events-none">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">auto_awesome</span>
+</div>
+<div class="absolute bottom-3 -right-3 ambient-sparkle-1 text-tertiary-container pointer-events-none">
+<span class="material-symbols-outlined text-xl" style="font-variation-settings: 'FILL' 1;">sparkles</span>
+</div>
+<!-- Main Illustrated Hero Card Frame -->
+<div class="relative w-32 h-32 rounded-3xl bg-gradient-to-b from-rose-50 to-amber-50 border-4 border-sunny-gold shadow-md flex items-center justify-center p-2.5 overflow-hidden transition-all duration-300" id="heroCardFrame">
+<img class="w-full h-full object-cover rounded-2xl" data-alt="A delightful, delicious strawberry soft-serve ice cream cone with vibrant pink ice cream swirl, red strawberry syrup glaze, cute friendly candy sprinkles, and a crispy wafer cone, rendered in high-detail 3D toy skeuomorphic style with warm cheerful lighting." id="heroImage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCB10OUBiNUAp6lvoKkAJcpFhkTGRky72jEpnnx5M2MLEzxali6zzFa6h_zddQQ9lgm_l0ntLJTL_Xky0xHlwSbH37Zl9JJwKfMUNhl4OerPbjyjwlv55hqTWIZRaxXweuQZt6ENTSwgxObep5nu5sNZX1kP0acfiMrTJ8M-23SDm99L7TpBM-2X_ZZLk603AHzzI5_6taq9_Mwdqs9BFz22boEte1vcu4uBo6gNs"/>
+<!-- Pill Tag -->
+<div class="absolute bottom-1 bg-tertiary-container text-on-tertiary-container px-2.5 py-0.5 rounded-full text-label-sm font-label-sm font-bold shadow-sm border border-emerald-200 flex items-center gap-1 transition-all duration-300" id="heroPillTag">
+<span id="heroPillText">Siap Ditukar!</span>
+<span id="heroPillEmoji">🎉</span>
+</div>
+</div>
+</div>
+<!-- 2. Headline & Kid-Friendly Subtitle -->
+<h2 class="text-headline-md font-headline-md text-on-surface font-bold tracking-tight transition-all duration-300" id="modalHeading">
+            Tukar Es Krim Lezat Ini? 🍦
+          </h2>
+<p class="text-body-md font-body-md text-on-surface-variant mt-1 max-w-xs leading-snug transition-all duration-300" id="modalSubtitle">
+            Yaaay! <span class="font-bold text-primary font-headline-sm">10 Bintang Emasmu</span> akan ditukar dengan <span class="font-bold text-soft-coral font-headline-sm">Es Krim Stroberi</span> dingin &amp; manis!
+          </p>
+<!-- 3. Star Balance Math / Visual Jar Math (Intuitive for 3-6 yo) -->
+<div class="w-full mt-4 bg-canvas-cream border-2 border-outline-variant/40 rounded-2xl p-3 shadow-inner relative overflow-hidden" id="mathCardContainer">
+<!-- Ambient sparkle over the star jar header -->
+<div class="flex items-center justify-center gap-1.5 mb-2.5 relative">
+<span class="material-symbols-outlined text-sunny-gold text-lg ambient-sparkle-1" style="font-variation-settings: 'FILL' 1;">savings</span>
+<span class="text-label-md font-headline-sm font-bold text-primary">Hitungan Toples Bintangmu</span>
+<span class="material-symbols-outlined text-sunny-gold text-base ambient-sparkle-2" style="font-variation-settings: 'FILL' 1;">sparkles</span>
+</div>
+<!-- Math Formula Grid: 18 - 10 = 8 -->
+<div class="grid grid-cols-3 gap-2 items-center">
+<!-- Current Stars (18 -> animated to 8 on success) -->
+<div class="bg-surface-container-lowest rounded-2xl p-2 border-2 border-sunny-gold shadow-sm flex flex-col items-center transition-all duration-500" id="colPunyaBima">
+<span class="text-label-sm font-label-sm text-on-surface-variant font-bold leading-tight" id="lblPunyaBima">Punya Bima</span>
+<div class="flex items-center gap-0.5 text-headline-sm font-number-counter font-bold text-primary mt-0.5">
+<span id="starCurrentNum">18</span>
+<span class="material-symbols-outlined text-sunny-gold text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Minus Star Cost (-10) -->
+<div class="bg-rose-50 rounded-2xl p-2 border-2 border-soft-coral/50 shadow-sm flex flex-col items-center transition-all duration-500" id="colBiayaEsKrim">
+<span class="text-label-sm font-label-sm text-soft-coral font-bold leading-tight">Biaya Es Krim</span>
+<div class="flex items-center gap-0.5 text-headline-sm font-number-counter font-bold text-tactile-shadow-coral mt-0.5">
+<span>-10</span>
+<span class="material-symbols-outlined text-soft-coral text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Remaining Stars (= 8) -->
+<div class="bg-cream-cloud rounded-2xl p-2 border-2 border-tertiary-container shadow-sm flex flex-col items-center transition-all duration-500" id="colSisaNanti">
+<span class="text-label-sm font-label-sm text-tertiary font-bold leading-tight">Sisa Nanti</span>
+<div class="flex items-center gap-0.5 text-headline-sm font-number-counter font-bold text-tertiary mt-0.5">
+<span id="starRemainingNum">= 8</span>
+<span class="material-symbols-outlined text-sunny-gold text-base" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</div>
+<!-- Reassurance Note for 3-6 Year Olds -->
+<div class="mt-2.5 pt-2 border-t border-slate-200/80 flex items-center justify-center gap-1.5 text-label-sm font-headline-sm text-tertiary font-bold transition-all duration-300" id="mathCardFooter">
+<span class="material-symbols-outlined text-base" id="footerIcon" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span id="footerText">Hore! Toplesmu masih ada 8 bintang tersisa! ✨</span>
+</div>
+</div>
+<!-- 4. Friendly Parent-Child Action Reminder Box -->
+<div class="w-full mt-3 bg-secondary-fixed/40 border-2 border-secondary-container/60 rounded-2xl p-2.5 flex items-center gap-2.5 text-left transition-all duration-300" id="parentReminderBox">
+<div class="w-10 h-10 rounded-xl bg-secondary-fixed flex-shrink-0 flex items-center justify-center text-xl shadow-xs">
+              👨‍👩‍👧
+            </div>
+<p class="text-label-sm font-body-sm text-on-surface leading-tight" id="parentReminderText">
+<strong class="font-headline-sm text-secondary font-bold block">Pemberitahuan untuk Ayah &amp; Ibu:</strong>
+              Setelah tekan tombol, tunjukkan layar ini ke orang tua ya untuk mengambil es krim aslimu!
+            </p>
+</div>
+<!-- 5. Big Tactile Touch-First Action Buttons (min 56px height) -->
+<div class="w-full mt-4 space-y-2.5" id="actionButtonsContainer">
+<!-- Primary CTA Button with gentle tactile pulse bounce -->
+<button class="tactile-btn-amber animate-tactile-bounce w-full min-h-[58px] py-3.5 px-4 bg-gradient-to-r from-sunny-gold via-primary-container to-sunny-gold text-on-primary-container rounded-2xl font-headline-md text-headline-sm font-bold flex items-center justify-center gap-2 cursor-pointer border-t border-amber-200" id="confirmRedeemBtn" onclick="handleRewardRedeem()">
+<span class="material-symbols-outlined text-2xl animate-sparkle" style="font-variation-settings: 'FILL' 1;">star</span>
+<span>Ya, Tukar Sekarang! 🎁✨</span>
+</button>
+<!-- Secondary Ghost / Back Button -->
+<button class="tactile-btn-secondary w-full min-h-[50px] py-2.5 px-4 bg-surface-container text-on-surface-variant border-2 border-outline-variant/50 rounded-2xl font-headline-sm text-label-md font-bold flex items-center justify-center gap-1.5 hover:bg-surface-variant transition-colors cursor-pointer" id="cancelRedeemBtn" onclick="closeRewardModal()">
+<span>Pikir-pikir Dulu / Kembali</span>
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Celebratory Audio & Particle Micro-interaction JavaScript -->
+<script>
+    // Web Audio API Sound Synthesizer for cheerful arcade chime / pop
+    let audioCtx = null;
+
+    function playCelebrationFanfare() {
+      try {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+        if (!audioCtx) {
+          audioCtx = new AudioContextClass();
+        }
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+
+        const notes = [
+          { freq: 523.25, time: 0.00, dur: 0.14 }, // C5
+          { freq: 659.25, time: 0.12, dur: 0.14 }, // E5
+          { freq: 783.99, time: 0.24, dur: 0.16 }, // G5
+          { freq: 1046.50, time: 0.38, dur: 0.35 }, // C6 high bell
+          { freq: 1318.51, time: 0.52, dur: 0.45 }  // E6 triumphant chime
+        ];
+
+        const now = audioCtx.currentTime;
+
+        notes.forEach(note => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+
+          osc.type = 'triangle'; // Sweet marimba-like toy chime
+          osc.frequency.setValueAtTime(note.freq, now + note.time);
+
+          gain.gain.setValueAtTime(0.001, now + note.time);
+          gain.gain.exponentialRampToValueAtTime(0.28, now + note.time + 0.02);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + note.time + note.dur);
+
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+
+          osc.start(now + note.time);
+          osc.stop(now + note.time + note.dur);
+        });
+
+        // Add cute secondary pop shimmer
+        const popOsc = audioCtx.createOscillator();
+        const popGain = audioCtx.createGain();
+        popOsc.type = 'sine';
+        popOsc.frequency.setValueAtTime(800, now + 0.1);
+        popOsc.frequency.exponentialRampToValueAtTime(1400, now + 0.3);
+        popGain.gain.setValueAtTime(0.15, now + 0.1);
+        popGain.gain.exponentialRampToValueAtTime(0.001, now + 0.4);
+        popOsc.connect(popGain);
+        popGain.connect(audioCtx.destination);
+        popOsc.start(now + 0.1);
+        popOsc.stop(now + 0.4);
+      } catch (err) {
+        console.warn('Audio synthesis not supported or blocked:', err);
+      }
+    }
+
+    // Spectacular Burst Confetti & Falling Stars Generator
+    function launchCelebrationConfetti() {
+      const container = document.getElementById('confettiContainer');
+      if (!container) return;
+
+      const particles = ['⭐', '✨', '🍦', '🎀', '🎉', '🌟', '🍭', '🍓'];
+      const colors = ['#FBBF24', '#FB923C', '#38BDF8', '#30C88F', '#EC4899', '#A855F7'];
+      const totalParticles = 45;
+
+      const originX = window.innerWidth / 2;
+      const originY = window.innerHeight * 0.45;
+
+      for (let i = 0; i < totalParticles; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'confetti-particle flex items-center justify-center';
+
+        const isEmoji = Math.random() > 0.35;
+        if (isEmoji) {
+          particle.textContent = particles[Math.floor(Math.random() * particles.length)];
+          particle.style.fontSize = (18 + Math.random() * 20) + 'px';
+        } else {
+          // Colorful confetti ribbon / disk
+          particle.style.width = (10 + Math.random() * 12) + 'px';
+          particle.style.height = (12 + Math.random() * 14) + 'px';
+          particle.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+          particle.style.borderRadius = Math.random() > 0.5 ? '9999px' : '3px';
+        }
+
+        particle.style.left = originX + 'px';
+        particle.style.top = originY + 'px';
+
+        // Trajectory calculations (radial explosive burst)
+        const angle = Math.random() * 2 * Math.PI;
+        const distance = 120 + Math.random() * 220;
+        const tx = Math.cos(angle) * distance;
+        const ty = Math.sin(angle) * distance - (40 + Math.random() * 120); // biased upwards
+        const rot = (Math.random() * 720 - 360) + 'deg';
+
+        particle.style.setProperty('--tx', `${tx}px`);
+        particle.style.setProperty('--ty', `${ty}px`);
+        particle.style.setProperty('--rot', rot);
+        particle.style.animationDelay = (Math.random() * 0.25) + 's';
+        particle.style.animationDuration = (1.4 + Math.random() * 0.8) + 's';
+
+        container.appendChild(particle);
+
+        setTimeout(() => {
+          if (particle.parentNode) {
+            particle.parentNode.removeChild(particle);
+          }
+        }, 2600);
+      }
+    }
+
+    // Number countdown animation: 18 -> 8
+    function animateJarCountdown() {
+      const starCurrent = document.getElementById('starCurrentNum');
+      let currentVal = 18;
+      const targetVal = 8;
+      const interval = setInterval(() => {
+        if (currentVal > targetVal) {
+          currentVal--;
+          if (starCurrent) starCurrent.textContent = currentVal;
+        } else {
+          clearInterval(interval);
+          // Highlight current to remaining state
+          const colPunya = document.getElementById('colPunyaBima');
+          if (colPunya) {
+            colPunya.classList.remove('bg-surface-container-lowest', 'border-sunny-gold');
+            colPunya.classList.add('bg-cream-cloud', 'border-tertiary-container', 'scale-105');
+          }
+          const lblPunya = document.getElementById('lblPunyaBima');
+          if (lblPunya) {
+            lblPunya.textContent = 'Toples Sekarang';
+            lblPunya.classList.add('text-tertiary');
+          }
+        }
+      }, 70);
+    }
+
+    // Main redeem click handler
+    function handleRewardRedeem() {
+      // 1. Play synthesis sound
+      playCelebrationFanfare();
+
+      // 2. Burst Confetti
+      launchCelebrationConfetti();
+      setTimeout(launchCelebrationConfetti, 400);
+
+      // 3. Update background balance state as well
+      const bgStarCountLabel = document.getElementById('bgStarCountLabel');
+      if (bgStarCountLabel) bgStarCountLabel.textContent = '8 Bintang Emas';
+      const bgStarBadge = document.getElementById('bgStarBadge');
+      if (bgStarBadge) bgStarBadge.textContent = '8';
+
+      // 4. Hero Card Frame Jump & Glowing Pulse
+      const heroBadgeWrapper = document.getElementById('heroBadgeWrapper');
+      if (heroBadgeWrapper) {
+        heroBadgeWrapper.classList.remove('animate-gentle-float');
+        heroBadgeWrapper.classList.add('animate-joy-jump');
+      }
+
+      const heroHaloRing = document.getElementById('heroHaloRing');
+      if (heroHaloRing) {
+        heroHaloRing.classList.remove('from-sunny-gold/30', 'to-sky-tint/30');
+        heroHaloRing.classList.add('from-tertiary-container/60', 'via-sunny-gold/50', 'to-soft-coral/50', 'scale-125');
+      }
+
+      const heroCardFrame = document.getElementById('heroCardFrame');
+      if (heroCardFrame) {
+        heroCardFrame.classList.remove('border-sunny-gold');
+        heroCardFrame.classList.add('border-tertiary-container', 'shadow-xl');
+      }
+
+      const heroPillTag = document.getElementById('heroPillTag');
+      if (heroPillTag) {
+        heroPillTag.className = 'absolute bottom-1 bg-sunny-gold text-on-primary-container px-3 py-1 rounded-full text-label-sm font-bold shadow-md border-2 border-amber-300 flex items-center gap-1 scale-110';
+      }
+      const heroPillText = document.getElementById('heroPillText');
+      if (heroPillText) heroPillText.textContent = 'Tersimpan Untuk Bima!';
+      const heroPillEmoji = document.getElementById('heroPillEmoji');
+      if (heroPillEmoji) heroPillEmoji.textContent = '🍦⭐';
+
+      // 5. Transform Modal Headings
+      const heading = document.getElementById('modalHeading');
+      if (heading) {
+        heading.textContent = 'Horeee! Penukaran Berhasil! 🎉🍦';
+        heading.className = 'text-headline-md font-headline-md text-tertiary font-bold tracking-tight';
+      }
+
+      const subtitle = document.getElementById('modalSubtitle');
+      if (subtitle) {
+        subtitle.innerHTML = '10 Bintang terkirim ke <strong class="text-secondary font-headline-sm">Ayah &amp; Ibu</strong>! Bima hebat! Sekarang ayo tunjukkan layar ini ke Ayah atau Ibu untuk ambil es krim aslimu! 🍨✨';
+      }
+
+      // 6. Animate Star Deduction (18 -> 8)
+      animateJarCountdown();
+
+      // Update Math reassurance footer
+      const footerText = document.getElementById('footerText');
+      if (footerText) {
+        footerText.textContent = 'Bintang berhasil ditukar! Bima anak rajin & hebat! 🌟';
+      }
+
+      // 7. Update Parent Box to Alert Highlight Mode
+      const parentBox = document.getElementById('parentReminderBox');
+      if (parentBox) {
+        parentBox.className = 'w-full mt-3 bg-cream-cloud border-2 border-sunny-gold rounded-2xl p-3 flex items-center gap-3 text-left shadow-sm';
+      }
+      const parentText = document.getElementById('parentReminderText');
+      if (parentText) {
+        parentText.innerHTML = '<strong class="font-headline-sm text-primary font-bold block text-sm">Tunjukkan ke Ayah & Ibu Sekarang:</strong> "Ayah/Ibu, Bima sudah tukar 10 bintang untuk Es Krim Stroberi!" 🍨';
+      }
+
+      // 8. Swap Action Buttons for Celebration Actions
+      const buttonsContainer = document.getElementById('actionButtonsContainer');
+      if (buttonsContainer) {
+        buttonsContainer.innerHTML = `
+          <!-- Tunjukkan ke Ayah / Ibu (Chunky Green Success CTA) -->
+          <button onclick="parentAcknowledgeCelebration()" class="tactile-btn-emerald animate-tactile-bounce w-full min-h-[58px] py-3.5 px-4 bg-gradient-to-r from-tertiary-container via-emerald-500 to-tertiary-container text-white rounded-2xl font-headline-md text-headline-sm font-bold flex items-center justify-center gap-2 cursor-pointer border-t border-emerald-300">
+            <span class="text-2xl">👨‍👩‍👧</span>
+            <span>Tunjukkan ke Ayah/Ibu 🍨</span>
+          </button>
+          
+          <!-- Kembali ke Petualangan -->
+          <button onclick="closeRewardModal()" class="tactile-btn-secondary w-full min-h-[52px] py-3 px-4 bg-surface-container text-on-surface border-2 border-outline-variant/60 rounded-2xl font-headline-sm text-label-md font-bold flex items-center justify-center gap-2 hover:bg-surface-variant transition-colors cursor-pointer">
+            <span class="material-symbols-outlined text-xl text-primary" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+            <span>Kembali ke Petualangan 🚀</span>
+          </button>
+        `;
+      }
+    }
+
+    function parentAcknowledgeCelebration() {
+      playCelebrationFanfare();
+      launchCelebrationConfetti();
+      alert('Ayah/Ibu melihat penukaran! Selamat menikmati Es Krim Stroberi lezat, Bima! 🍦🎉');
+    }
+
+    function closeRewardModal() {
+      const modal = document.getElementById('rewardModalOverlay');
+      if (modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+</body></html>

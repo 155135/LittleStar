@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 28;
+    user-select: none;
+    vertical-align: middle;
+  }
+  .material-symbols-fill {
+    font-variation-settings: 'FILL' 1, 'wght' 600, 'GRAD' 0, 'opsz' 28;
+    user-select: none;
+    vertical-align: middle;
+  }
+}
+
+.tactile-btn {
+  transition: transform 0.08s ease, box-shadow 0.08s ease;
+}
+
+.tactile-btn:active {
+  transform: translateY(4px) !important;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+}
+
+@keyframes floatStar {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-4px) rotate(6deg); }
+}
+
+.animate-float {
+  animation: floatStar 3s ease-in-out infinite;
+}
+
+@keyframes shakeAnim {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-8px); }
+  40%, 80% { transform: translateX(8px); }
+}
+
+.animate-shake {
+  animation: shakeAnim 0.4s ease-in-out;
+}

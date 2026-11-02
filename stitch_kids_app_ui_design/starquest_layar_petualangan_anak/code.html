@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="id"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>StarQuest - Mode Petualangan Bima</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@500;600;700&amp;family=Quicksand:wght@600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          "colors": {
+            "on-background": "#0d1c2e",
+            "tactile-shadow-coral": "#C2410C",
+            "on-tertiary": "#ffffff",
+            "outline-variant": "#d8c3ad",
+            "surface-tint": "#855300",
+            "on-secondary": "#ffffff",
+            "tertiary-container": "#30c88f",
+            "surface-bright": "#f8f9ff",
+            "primary-fixed": "#ffddb8",
+            "on-primary-fixed-variant": "#653e00",
+            "soft-coral": "#FB923C",
+            "outline": "#867461",
+            "on-secondary-fixed": "#001d31",
+            "on-surface-variant": "#534434",
+            "surface-container-low": "#eff4ff",
+            "on-tertiary-container": "#004e34",
+            "cream-cloud": "#FEF9C3",
+            "on-surface": "#0d1c2e",
+            "on-secondary-fixed-variant": "#004b73",
+            "background": "#f8f9ff",
+            "sunny-gold": "#FBBF24",
+            "on-error-container": "#93000a",
+            "tactile-shadow-amber": "#B45309",
+            "error-container": "#ffdad6",
+            "inverse-on-surface": "#eaf1ff",
+            "surface": "#f8f9ff",
+            "on-tertiary-fixed": "#002113",
+            "tertiary-fixed": "#6ffbbe",
+            "sky-tint": "#38BDF8",
+            "primary-container": "#f59e0b",
+            "secondary-container": "#5bb8fe",
+            "tertiary-fixed-dim": "#4edea3",
+            "on-error": "#ffffff",
+            "primary-fixed-dim": "#ffb95f",
+            "canvas-cream": "#F8FAFC",
+            "secondary-fixed": "#cce5ff",
+            "surface-container-lowest": "#ffffff",
+            "on-secondary-container": "#00476e",
+            "surface-variant": "#d5e3fc",
+            "tactile-shadow-sky": "#0369A1",
+            "inverse-surface": "#233144",
+            "secondary-fixed-dim": "#93ccff",
+            "tactile-shadow-emerald": "#047857",
+            "on-primary": "#ffffff",
+            "surface-container-high": "#dce9ff",
+            "tertiary": "#006c49",
+            "on-primary-fixed": "#2a1700",
+            "surface-container-highest": "#d5e3fc",
+            "on-primary-container": "#613b00",
+            "on-tertiary-fixed-variant": "#005236",
+            "surface-dim": "#ccdbf3",
+            "secondary": "#006398",
+            "primary": "#855300",
+            "inverse-primary": "#ffb95f",
+            "surface-container": "#e6eeff",
+            "error": "#ba1a1a"
+          },
+          "borderRadius": {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          "spacing": {
+            "space-md": "1.25rem",
+            "gutter": "1rem",
+            "space-lg": "1.75rem",
+            "space-xs": "0.375rem",
+            "margin-desktop": "3rem",
+            "space-xl": "2.5rem",
+            "space-sm": "0.75rem",
+            "gutter-tablet": "1.5rem",
+            "margin": "1rem",
+            "margin-tablet": "2rem"
+          },
+          "fontFamily": {
+            "label-sm": ["Quicksand"],
+            "label-lg": ["Quicksand"],
+            "headline-md": ["Quicksand"],
+            "headline-lg": ["Quicksand"],
+            "body-md": ["Nunito Sans"],
+            "headline-sm": ["Quicksand"],
+            "body-lg": ["Nunito Sans"],
+            "label-md": ["Quicksand"],
+            "headline-lg-mobile": ["Quicksand"],
+            "display-hero": ["Quicksand"],
+            "body-sm": ["Nunito Sans"],
+            "display-hero-mobile": ["Quicksand"],
+            "number-counter": ["Quicksand"]
+          },
+          "fontSize": {
+            "label-sm": ["12px", { "lineHeight": "16px", "fontWeight": "700" }],
+            "label-lg": ["16px", { "lineHeight": "20px", "fontWeight": "700" }],
+            "headline-md": ["22px", { "lineHeight": "28px", "fontWeight": "700" }],
+            "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+            "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "600" }],
+            "headline-sm": ["18px", { "lineHeight": "24px", "fontWeight": "700" }],
+            "body-lg": ["18px", { "lineHeight": "26px", "fontWeight": "600" }],
+            "label-md": ["14px", { "lineHeight": "18px", "fontWeight": "700" }],
+            "headline-lg-mobile": ["26px", { "lineHeight": "32px", "fontWeight": "700" }],
+            "display-hero": ["48px", { "lineHeight": "56px", "fontWeight": "700" }],
+            "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "500" }],
+            "display-hero-mobile": ["36px", { "lineHeight": "44px", "fontWeight": "700" }],
+            "number-counter": ["40px", { "lineHeight": "44px", "fontWeight": "700" }]
+          }
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 600, 'GRAD' 0, 'opsz' 28;
+    }
+    .tactile-btn {
+      transition: transform 0.08s ease, box-shadow 0.08s ease;
+    }
+    .tactile-btn:active {
+      transform: translateY(4px) !important;
+      box-shadow: 0 0 0 rgba(0, 0, 0, 0) !important;
+    }
+    @keyframes floatStar {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      50% { transform: translateY(-5px) rotate(6deg); }
+    }
+    .animate-float {
+      animation: floatStar 3s ease-in-out infinite;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface text-on-surface min-h-screen flex flex-col items-center antialiased pb-28 selection:bg-sunny-gold selection:text-on-surface">
+<!-- Desktop Preview Shell Wrapper (Max width tailored for mobile view) -->
+<div class="w-full max-w-md min-h-screen flex flex-col relative bg-canvas-cream shadow-xl">
+<!-- TopAppBar (Mapped from Shared Component) -->
+<header class="bg-surface docked full-width top rounded-b-lg shadow-sm flex justify-between items-center w-full px-margin py-space-sm z-30 sticky top-0">
+<!-- Profile Slot -->
+<div class="flex items-center gap-2.5">
+<div class="relative w-12 h-12 rounded-full overflow-hidden border-2 border-primary-container p-0.5 bg-cream-cloud shadow-sm">
+<img class="w-full h-full object-cover rounded-full" data-alt="Chubby friendly astronaut explorer kid avatar smiling warmly with a rounded futuristic helmet inside a vibrant space-themed cockpit. Soft high-key morning light, warm yellow and baby blue tones, 3D claymation cartoon style with bold friendly features." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCYme1vW9iMi3aTljESYFBK29sXtQacJXg9_xu1SF6BXYsi-RhX5OWRnK_PXqs2fMOSnSpLA4MnWbYpjtHkVR33H7sgMhhKhd3-qKMuhxZPXrZPotk0ekI_aeiEVpnWTKuRTY9Mz2Vow1j8GEpGwiK0V_72Tgy13ljN1uuGAhCKXhI5Lua78MLVUHs9QkFYExRFGGwCh5aAD-bO-2xmFPeqaBFgkBnayogagL6L0kU"/>
+<span class="absolute bottom-0 right-0 w-3.5 h-3.5 bg-tertiary-container border-2 border-surface-container-lowest rounded-full"></span>
+</div>
+<div class="flex flex-col">
+<span class="text-headline-sm font-headline-sm font-bold text-on-surface tracking-tight">Bima</span>
+<span class="text-label-sm font-label-sm text-on-surface-variant flex items-center gap-1">
+<span>5 Tahun</span>
+<span class="text-sunny-gold">🚀</span>
+</span>
+</div>
+</div>
+<!-- Center / Right Toples Bintang & Parent Gate -->
+<div class="flex items-center gap-2">
+<!-- Toples Bintang (Star Bank Indicator) -->
+<div class="flex items-center bg-cream-cloud border-2 border-sunny-gold rounded-full px-3 py-1.5 shadow-sm">
+<span class="material-symbols-outlined text-primary-container animate-float mr-1" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+<span class="font-headline-sm text-headline-sm text-primary font-bold">18</span>
+<span class="text-label-sm font-label-sm text-primary font-extrabold ml-1">★</span>
+</div>
+<!-- Mode Orang Tua Button (Parent Gate) -->
+<button aria-label="Mode Orang Tua" class="w-11 h-11 flex items-center justify-center rounded-2xl bg-surface-container hover:bg-surface-variant active:translate-y-1 transition-all duration-150 border-b-2 border-outline-variant shadow-sm text-on-surface-variant" title="Mode Orang Tua" type="button">
+<span class="material-symbols-outlined text-outline" data-icon="lock">lock</span>
+</button>
+</div>
+</header>
+<!-- Main Content Stream -->
+<main class="flex-1 px-margin pt-space-sm flex flex-col gap-space-md">
+<!-- Hero Progress Card (Bento Banner) -->
+<section class="relative overflow-hidden rounded-lg bg-surface-container-lowest border-2 border-surface-variant p-space-md shadow-sm">
+<div class="absolute -right-4 -bottom-6 opacity-20 pointer-events-none text-sunny-gold">
+<span class="material-symbols-outlined text-8xl" data-icon="rocket_launch" data-weight="fill" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+</div>
+<div class="relative z-10 flex flex-col gap-2">
+<div class="flex justify-between items-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 bg-surface-container rounded-full text-label-md font-label-md text-secondary font-bold">
+<span class="material-symbols-outlined text-sm" data-icon="flag" data-weight="fill" style="font-variation-settings: 'FILL' 1;">flag</span>
+              Petualangan Hari Ini
+            </span>
+<span class="text-label-md font-label-md text-primary font-bold bg-cream-cloud px-2.5 py-0.5 rounded-full border border-sunny-gold">
+              2 / 4 Misi Selesai
+            </span>
+</div>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface font-bold tracking-tight mt-1">
+            Sedikit lagi toplesmu penuh! 🚀
+          </h2>
+<!-- Visual Progress Track -->
+<div class="w-full bg-surface-container-high rounded-full h-4 mt-2 p-0.5 border border-outline-variant/30 flex items-center">
+<div class="bg-primary-container h-full rounded-full transition-all duration-500 shadow-inner flex items-center justify-end pr-1" style="width: 50%;">
+<span class="w-2 h-2 rounded-full bg-surface-container-lowest"></span>
+</div>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+            Selesaikan 2 misi lagi hari ini untuk membuka lencana penjelajah bintang!
+          </p>
+</div>
+</section>
+<!-- Quests Section Title -->
+<div class="flex justify-between items-center px-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container" data-icon="task_alt">task_alt</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Misi Harian Bima</h3>
+</div>
+<span class="text-label-sm font-label-sm text-on-surface-variant font-bold">Usia 3-6 Tahun</span>
+</div>
+<!-- Quest Cards Stream -->
+<div class="flex flex-col gap-space-md">
+<!-- QUEST 1: ACTIVE / TO DO (Sikat Gigi) -->
+<article class="bg-surface-container-lowest border-2 border-surface-variant rounded-lg p-space-md shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Big Icon Block -->
+<div class="w-14 h-14 rounded-2xl bg-secondary-fixed flex items-center justify-center text-secondary border-b-4 border-tactile-shadow-sky flex-shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="hygiene" data-weight="fill" style="font-variation-settings: 'FILL' 1;">cloud_download</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">
+                  Sikat Gigi Bersih-bersih 🪥
+                </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Pagi hari setelah sarapan enak
+                </p>
+</div>
+</div>
+<!-- Star Reward Badge -->
+<div class="bg-cream-cloud border-2 border-sunny-gold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm flex-shrink-0">
+<span class="text-label-md font-label-md text-primary font-bold">+2</span>
+<span class="material-symbols-outlined text-primary-container text-base" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Chunky Tactile CTA Button -->
+<button class="tactile-btn w-full min-h-[56px] bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-bold rounded-2xl flex items-center justify-center gap-2 border-b-4 border-tactile-shadow-amber shadow-md hover:bg-sunny-gold" type="button">
+<span class="material-symbols-outlined" data-icon="sparkles" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+<span>Aku Sudah Selesai! ✨</span>
+</button>
+</article>
+<!-- QUEST 2: ACTIVE / TO DO (Rapikan Mainan) -->
+<article class="bg-surface-container-lowest border-2 border-surface-variant rounded-lg p-space-md shadow-sm flex flex-col gap-3 relative overflow-hidden">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Big Icon Block -->
+<div class="w-14 h-14 rounded-2xl bg-primary-fixed flex items-center justify-center text-primary-container border-b-4 border-tactile-shadow-amber flex-shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="smart_toy" data-weight="fill" style="font-variation-settings: 'FILL' 1;">smart_toy</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">
+                  Rapikan Mainan ke Kotak 🧸
+                </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Simpan balok dan robot ke keranjang
+                </p>
+</div>
+</div>
+<!-- Star Reward Badge -->
+<div class="bg-cream-cloud border-2 border-sunny-gold px-2.5 py-1 rounded-full flex items-center gap-1 shadow-sm flex-shrink-0">
+<span class="text-label-md font-label-md text-primary font-bold">+3</span>
+<span class="material-symbols-outlined text-primary-container text-base" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+<!-- Chunky Tactile CTA Button -->
+<button class="tactile-btn w-full min-h-[56px] bg-primary-container text-on-primary-container font-headline-sm text-headline-sm font-bold rounded-2xl flex items-center justify-center gap-2 border-b-4 border-tactile-shadow-amber shadow-md hover:bg-sunny-gold" type="button">
+<span class="material-symbols-outlined" data-icon="sparkles" data-weight="fill" style="font-variation-settings: 'FILL' 1;">arrow_back_ios_new</span>
+<span>Aku Sudah Selesai! ✨</span>
+</button>
+</article>
+<!-- QUEST 3: PENDING APPROVAL (Makan Sayur Brokoli) -->
+<article class="bg-surface-container-lowest/80 border-2 border-surface-variant rounded-lg p-space-md shadow-sm flex flex-col gap-3 relative opacity-95">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Big Icon Block -->
+<div class="w-14 h-14 rounded-2xl bg-tertiary-container/30 flex items-center justify-center text-tertiary border-b-4 border-tactile-shadow-emerald flex-shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="nutrition" data-weight="fill" style="font-variation-settings: 'FILL' 1;">nutrition</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold leading-snug">
+                  Makan Sayur Brokoli 🥦
+                </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">
+                  Habiskan sayuran hijau di piring
+                </p>
+</div>
+</div>
+<!-- Star Reward Badge -->
+<div class="bg-surface-container border border-outline-variant px-2.5 py-1 rounded-full flex items-center gap-1 flex-shrink-0">
+<span class="text-label-md font-label-md text-on-surface-variant font-bold">+2</span>
+<span class="material-symbols-outlined text-outline-variant text-base" data-icon="star">star</span>
+</div>
+</div>
+<!-- Pending Pill Action Button -->
+<div class="w-full min-h-[52px] bg-cream-cloud border-2 border-dashed border-sunny-gold text-on-primary-fixed-variant font-label-lg text-label-lg rounded-2xl flex items-center justify-center gap-2 cursor-default">
+<span class="material-symbols-outlined animate-spin text-primary-container" data-icon="hourglass_top" style="animation-duration: 4s;">hourglass_top</span>
+<span>⏳ Menunggu Ayah/Ibu Cek</span>
+</div>
+</article>
+<!-- QUEST 4: COMPLETED & APPROVED (Tidur Siang Nyenyak) -->
+<article class="bg-surface-container-low border-2 border-tertiary-fixed rounded-lg p-space-md shadow-sm flex flex-col gap-2 relative">
+<div class="flex items-start justify-between">
+<div class="flex items-center gap-3">
+<!-- Completed Icon Block -->
+<div class="w-14 h-14 rounded-2xl bg-tertiary-fixed flex items-center justify-center text-on-tertiary-container border-b-4 border-tactile-shadow-emerald flex-shrink-0">
+<span class="material-symbols-outlined text-3xl" data-icon="bedtime" data-weight="fill" style="font-variation-settings: 'FILL' 1;">bedtime</span>
+</div>
+<div>
+<h4 class="font-headline-sm text-headline-sm text-on-surface font-bold line-through text-outline">
+                  Tidur Siang Nyenyak 🌙
+                </h4>
+<p class="font-body-sm text-body-sm text-tertiary font-bold mt-0.5 flex items-center gap-1">
+<span class="material-symbols-outlined text-base" data-icon="check_circle" data-weight="fill" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+                  Selesai &amp; Dapat Bintang! 🎉
+                </p>
+</div>
+</div>
+<!-- Star Awarded Badge -->
+<div class="bg-tertiary-fixed border border-tactile-shadow-emerald px-2.5 py-1 rounded-full flex items-center gap-1 flex-shrink-0">
+<span class="text-label-md font-label-md text-on-tertiary-fixed font-bold">+1</span>
+<span class="material-symbols-outlined text-primary-container text-base" data-icon="star" data-weight="fill" style="font-variation-settings: 'FILL' 1;">star</span>
+</div>
+</div>
+</article>
+</div>
+</main>
+<!-- BottomNavBar (Mapped directly from Shared Component JSON) -->
+<!-- Destination count: 2, labels: ["Misi Petualangan", "Toko Hadiah"], active: "Misi Petualangan" -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-margin pb-space-sm pt-space-xs bg-surface-container-lowest docked full-width bottom-0 rounded-t-lg shadow-lg">
+<div class="w-full max-w-md flex justify-around items-center">
+<!-- Tab 1: Misi Petualangan (ACTIVE) -->
+<a aria-current="page" class="flex flex-col items-center justify-center bg-primary-container text-on-primary-container rounded-2xl px-space-md py-space-xs font-bold border-b-4 border-tactile-shadow-amber active:translate-y-1 transition-transform duration-100 min-w-[130px]" href="#misi">
+<span class="material-symbols-outlined text-2xl" data-icon="rocket_launch" data-weight="fill" style="font-variation-settings: 'FILL' 1;">rocket_launch</span>
+<span class="text-label-md font-label-md mt-0.5">Misi Petualangan</span>
+</a>
+<!-- Tab 2: Toko Hadiah (INACTIVE) -->
+<a class="flex flex-col items-center justify-center text-on-surface-variant hover:bg-surface-container px-space-md py-space-xs font-medium active:translate-y-1 transition-transform duration-100 rounded-2xl min-w-[130px]" href="#hadiah">
+<span class="material-symbols-outlined text-2xl" data-icon="featured_seasonal_and_gifts">featured_seasonal_and_gifts</span>
+<span class="text-label-md font-label-md mt-0.5">Toko Hadiah</span>
+</a>
+</div>
+</nav>
+</div>
+<script>
+    // Audio / Tactile Feedback Micro-interaction simulation
+    document.querySelectorAll('.tactile-btn').forEach(button => {
+      button.addEventListener('click', (e) => {
+        // Quick visual affirmation bounce
+        button.style.transform = 'scale(0.96)';
+        setTimeout(() => {
+          button.style.transform = '';
+        }, 120);
+      });
+    });
+  </script>
+</body></html>
